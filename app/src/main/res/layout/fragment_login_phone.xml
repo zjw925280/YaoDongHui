@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutPhone"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_50"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableEnd="@mipmap/picker_arrow_down"
+            android:drawablePadding="@dimen/dp_12"
+            android:gravity="center_vertical"
+            android:text="+86"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dp_20"
+            android:layout_marginVertical="@dimen/dp_14"
+            android:background="@color/color_E6E6E6" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPhone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:gravity="center_vertical"
+            android:hint="@string/string_phone_input_hint"
+            android:inputType="number"
+            android:maxLength="16"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/dp_30"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_D8D8D8"
+            android:textSize="@dimen/sp_14" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/layoutCode"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@+id/layoutPhone"
+        app:layout_constraintRight_toRightOf="@+id/layoutPhone"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPhone">
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPwd"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_50"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:digits="0123456789"
+            android:gravity="center_vertical"
+            android:hint="@string/string_hint_phone_code"
+            android:inputType="number"
+            android:maxLength="16"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/dp_30"
+            android:textColor="@color/color_333333"
+            android:textColorHint="@color/color_D8D8D8"
+            android:textSize="@dimen/sp_14" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnGetCode"
+            android:layout_width="@dimen/dp_110"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp_5"
+            android:text="@string/string_phone_code_get"
+            android:textColor="@color/color_btn_text_phone_code"
+            android:textSize="@dimen/sp_14" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/color_E6E6E6"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutPhone"
+        app:layout_constraintLeft_toLeftOf="@+id/layoutPhone"
+        app:layout_constraintRight_toRightOf="@+id/layoutPhone" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/color_E6E6E6"
+        app:layout_constraintBottom_toBottomOf="@+id/layoutCode"
+        app:layout_constraintLeft_toLeftOf="@+id/layoutPhone"
+        app:layout_constraintRight_toRightOf="@+id/layoutPhone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

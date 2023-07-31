@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="black_p10">#16000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="color_9C67E6">#9C67E6</color>
+    <color name="color_0C9C67E6">#0C9C67E6</color>
+    <color name="color_4C9C67E6">#4C9C67E6</color>
+    <color name="color_DC5959">#DC5959</color>
+    <color name="color_68C4E2">#68C4E2</color>
+    <color name="color_60D6A5">#60D6A5</color>
+    <color name="color_4268E2">#4268E2</color>
+    <color name="color_DE7643">#DE7643</color>
+    <color name="color_51B261">#51B261</color>
+    <color name="color_F7F7F7">#F7F7F7</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_E6E6E6">#E6E6E6</color>
+    <color name="color_8648DE">#8648DE</color>
+    <color name="color_5A308A">#5A308A</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="color_6033B7">#6033B7</color>
+    <color name="color_14FFFFFF">#14FFFFFF</color>
+    <color name="color_707070">#707070</color>
+    <color name="color_0B9C67E6">#0B9C67E6</color>
+    <color name="color_439C67E6">#439C67E6</color>
+    <color name="color_1951B261">#1951B261</color>
+    <color name="color_19DC5959">#19DC5959</color>
+    <color name="color_12C67E6">#129C67E6</color>
+    <color name="color_E76E32">#E76E32</color>
+    <color name="color_19E76E32">#19E76E32</color>
+    <color name="color_CC9C67E6">#CC9C67E6</color>
+    <color name="color_199C67E6">#199C67E6</color>
+    <color name="color_D8D8D8">#D8D8D8</color>
+    <color name="color_EB1313">#EB1313</color>
+    <color name="color_CFCFCF">#CFCFCF</color>
+    <color name="color_6836CE">#6836CE</color>
+
+</resources>

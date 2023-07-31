@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dp_12"
+    android:layout_marginTop="@dimen/dp_5"
+    android:orientation="vertical">
+
+    <net.knowfx.yaodonghui.ui.views.MyBanner
+        android:id="@+id/itemVp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/itemIndex"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+    <View
+        android:id="@+id/itemDiv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@color/color_F7F7F7" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

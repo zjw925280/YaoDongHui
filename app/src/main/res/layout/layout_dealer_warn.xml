@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:background="@drawable/shape_bg_dealer_warn"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:text="要懂匯风险提示"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/stars"
+        app:layout_constraintLeft_toLeftOf="@id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <View
+        android:id="@+id/starProgress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#F4BC4C"
+        app:layout_constraintBottom_toBottomOf="@+id/stars"
+        app:layout_constraintLeft_toLeftOf="@+id/stars"
+        android:layout_marginStart="@dimen/dp_1"
+        app:layout_constraintTop_toTopOf="@+id/stars" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stars"
+        android:layout_width="@dimen/dp_85"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_dealer_warn_star"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintLeft_toLeftOf="@+id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnWarn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:background="@drawable/shape_bg_dealer_btn_warn"
+        android:paddingHorizontal="@dimen/dp_7"
+        android:paddingVertical="@dimen/dp_4"
+        android:text="风险详情"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

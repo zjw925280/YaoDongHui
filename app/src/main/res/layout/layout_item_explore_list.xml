@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/dp_12">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thumbIv"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginTop="@dimen/dp_18"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:background="@drawable/shape_bg_4268e2_c2"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/dp_5"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTv"
+        app:layout_constraintLeft_toRightOf="@+id/thumbIv"
+        app:layout_constraintRight_toLeftOf="@+id/titleTv"
+        app:layout_constraintTop_toTopOf="@+id/titleTv"
+        tools:text="无法出资" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@+id/contentTv"
+        app:layout_constraintLeft_toRightOf="@+id/labelTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/thumbIv"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="强行爆仓，不让出金" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/contentTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_5"
+        android:ellipsize="end"
+        android:lines="2"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/logoIv"
+        app:layout_constraintLeft_toRightOf="@+id/thumbIv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv"
+        tools:text="我已存入资金并在交易所参与交易 BLOO 但当交易有利可图时，我想取款，交易所强制哈哈哈哈哈哈哈哈哈哈" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoIv"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_5"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/thumbIv"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="@+id/contentTv"
+        app:layout_constraintRight_toLeftOf="@+id/nameTv"
+        app:layout_constraintTop_toBottomOf="@+id/contentTv"
+        tools:src="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_3"
+        android:maxLines="1"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/logoIv"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/logoIv"
+        app:layout_constraintRight_toLeftOf="@+id/timeTv"
+        app:layout_constraintTop_toTopOf="@+id/logoIv"
+        tools:text="真相小哥" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/timeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/logoIv"
+        app:layout_constraintLeft_toRightOf="@+id/nameTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logoIv"
+        tools:text="3小时前" />
+</androidx.constraintlayout.widget.ConstraintLayout>

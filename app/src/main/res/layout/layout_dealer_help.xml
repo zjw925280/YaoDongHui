@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:background="@drawable/shape_bg_broker_platform_help"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/helpIcon"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_20"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_platform_help"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/helpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:text="@string/string_text_platform_help"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@+id/helpCost"
+        app:layout_constraintLeft_toRightOf="@+id/helpIcon"
+        app:layout_constraintTop_toTopOf="@+id/helpIcon"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/helpCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginTop="@dimen/dp_2"
+        android:text="@string/string_text_help_cost"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/helpIcon"
+        app:layout_constraintLeft_toRightOf="@+id/helpIcon"
+        app:layout_constraintTop_toBottomOf="@+id/helpText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/superviseHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:background="@drawable/bg_btn_confirm"
+        android:paddingHorizontal="@dimen/dp_7"
+        android:paddingVertical="@dimen/dp_4"
+        android:text="@string/string_btn_need_help"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

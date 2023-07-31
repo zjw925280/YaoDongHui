@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.LegalAidActivity">
+
+    <View
+        android:id="@+id/titleBg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="法律援助"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/dp_15"
+        android:src="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        android:background="@color/color_F7F7F7"
+        app:layout_constraintTop_toBottomOf="@+id/titleBg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center_vertical"
+        android:text="姓名"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/idCodeText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBg" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="证件号码"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/phoneText"
+        app:layout_constraintLeft_toLeftOf="@+id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="联系电话"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/mailText"
+        app:layout_constraintLeft_toLeftOf="@id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/idCodeText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mailText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="邮箱"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toTopOf="@+id/accountText"
+        app:layout_constraintLeft_toLeftOf="@id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/accountText"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:text="交易账户"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="@+id/nameText"
+        app:layout_constraintTop_toBottomOf="@+id/mailText" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_35"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/nameText"
+        app:layout_constraintLeft_toRightOf="@id/idCodeText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nameText"
+        tools:text="张亦难" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idCodeTv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/idCodeText"
+        app:layout_constraintLeft_toLeftOf="@id/nameTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idCodeText"
+        tools:text="60**************56" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneTv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneText"
+        app:layout_constraintLeft_toLeftOf="@id/nameTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/phoneText"
+        tools:text="177******92" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/mailEdt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:hint="请输入邮箱"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_D8D8D8"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/mailText"
+        app:layout_constraintLeft_toLeftOf="@+id/nameTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mailText" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/accountEdt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:hint="请输入交易账户"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_D8D8D8"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/accountText"
+        app:layout_constraintLeft_toLeftOf="@+id/nameTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/accountText" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/contactLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/dp_12"
+        android:paddingVertical="@dimen/dp_14"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/accountText">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/btn_radio_bg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/contactText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_7"
+            android:text="我已阅读并同意《平台担保协议》"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_23"
+        android:background="@drawable/bg_btn_confirm"
+        android:gravity="center"
+        android:text="@string/string_submit"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

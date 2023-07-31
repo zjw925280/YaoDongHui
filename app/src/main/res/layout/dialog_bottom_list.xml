@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_bottom_pop"
+    android:paddingBottom="@dimen/dp_20"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/dialogBottomTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_18"
+        tools:text="标题" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dialogBottomRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnBottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_40"
+        android:background="@drawable/bg_btn_confirm"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+</androidx.appcompat.widget.LinearLayoutCompat>

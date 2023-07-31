@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_F7F7F7"
+    tools:context=".ui.activity.ScreenCaptureActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_35"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/icon_logo_share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCenter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_35"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            app:layout_constraintTop_toBottomOf="@+id/iconLogo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/qrCode"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginTop="@dimen/dp_55"
+            android:layout_marginBottom="@dimen/dp_55"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/textDownload"
+            app:layout_constraintTop_toBottomOf="@+id/imgCenter"
+            tools:src="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textDownload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_13"
+            android:text="扫码下载要懂汇APP"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textWebSet"
+            app:layout_constraintLeft_toRightOf="@+id/qrCode"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/qrCode" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textWebSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.knowfx.net"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/qrCode"
+            app:layout_constraintLeft_toLeftOf="@id/textDownload"
+            app:layout_constraintTop_toBottomOf="@+id/textDownload" />
+        <View
+            android:id="@+id/bgPercent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_100"
+            android:background="@drawable/shape_bg_share_percent"
+            app:layout_constraintBottom_toTopOf="@+id/qrCode"
+            android:layout_marginBottom="@dimen/dp_55"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/sp_14"
+            android:textColor="@color/color_333333"
+            app:layout_constraintTop_toTopOf="@+id/bgPercent"
+            app:layout_constraintBottom_toBottomOf="@+id/bgPercent"
+            app:layout_constraintLeft_toLeftOf="@+id/bgPercent"
+            app:layout_constraintRight_toRightOf="@+id/bgPercent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

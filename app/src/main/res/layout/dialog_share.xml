@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_bg_bottom_pop"
+    android:paddingTop="@dimen/dp_45"
+    android:paddingBottom="@dimen/dp_30">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutSavePic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/layoutCopy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/bgSaveImg"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/shape_bg_share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconSave"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/share_save"
+            app:layout_constraintBottom_toBottomOf="@+id/bgSaveImg"
+            app:layout_constraintLeft_toLeftOf="@+id/bgSaveImg"
+            app:layout_constraintRight_toRightOf="@+id/bgSaveImg"
+            app:layout_constraintTop_toTopOf="@+id/bgSaveImg" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSaveImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="@string/string_share_save"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/bgSaveImg"
+            app:layout_constraintRight_toRightOf="@+id/bgSaveImg"
+            app:layout_constraintTop_toBottomOf="@+id/bgSaveImg" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCopy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/layoutCircle"
+        app:layout_constraintRight_toLeftOf="@+id/layoutSavePic"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/bgCopy"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/shape_bg_share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconCopy"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/share_copy"
+            app:layout_constraintBottom_toBottomOf="@+id/bgCopy"
+            app:layout_constraintLeft_toLeftOf="@+id/bgCopy"
+            app:layout_constraintRight_toRightOf="@+id/bgCopy"
+            app:layout_constraintTop_toTopOf="@+id/bgCopy" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textCopy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="@string/string_share_copy"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/bgCopy"
+            app:layout_constraintRight_toRightOf="@+id/bgCopy"
+            app:layout_constraintTop_toBottomOf="@+id/bgCopy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutWechat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/layoutCircle"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/bgWechat"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/shape_bg_share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconShare"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/share_wechat"
+            app:layout_constraintBottom_toBottomOf="@+id/bgWechat"
+            app:layout_constraintLeft_toLeftOf="@+id/bgWechat"
+            app:layout_constraintRight_toRightOf="@+id/bgWechat"
+            app:layout_constraintTop_toTopOf="@+id/bgWechat" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="@string/string_share_wechat"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/bgWechat"
+            app:layout_constraintRight_toRightOf="@+id/bgWechat"
+            app:layout_constraintTop_toBottomOf="@+id/bgWechat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutCircle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/layoutWechat"
+        app:layout_constraintRight_toLeftOf="@+id/layoutCopy"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/bgCircle"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:background="@drawable/shape_bg_share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iconCircle"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/share_circle"
+            app:layout_constraintBottom_toBottomOf="@+id/bgCircle"
+            app:layout_constraintLeft_toLeftOf="@+id/bgCircle"
+            app:layout_constraintRight_toRightOf="@+id/bgCircle"
+            app:layout_constraintTop_toTopOf="@+id/bgCircle" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:text="@string/string_share_circle"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="@+id/bgCircle"
+            app:layout_constraintRight_toRightOf="@+id/bgCircle"
+            app:layout_constraintTop_toBottomOf="@+id/bgCircle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

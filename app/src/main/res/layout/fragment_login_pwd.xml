@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtPhone"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="@android:color/transparent"
+        android:digits="0123456789"
+        android:gravity="center_vertical"
+        android:hint="@string/string_phone_input_hint"
+        android:inputType="number"
+        android:maxLength="11"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_D8D8D8"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtPwd"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@android:color/transparent"
+        android:digits="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM_"
+        android:gravity="center_vertical"
+        android:hint="@string/string_pwd_input_hint"
+        android:inputType="textPassword"
+        android:maxLength="16"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/dp_30"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_D8D8D8"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="@id/edtPhone"
+        app:layout_constraintRight_toRightOf="@id/edtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnPwdSee"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:padding="@dimen/dp_18"
+        android:src="@drawable/selector_btn_pwd_see"
+        app:layout_constraintBottom_toBottomOf="@+id/edtPwd"
+        app:layout_constraintRight_toRightOf="@id/edtPwd"
+        app:layout_constraintTop_toTopOf="@+id/edtPwd" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/color_E6E6E6"
+        app:layout_constraintBottom_toBottomOf="@+id/edtPhone"
+        app:layout_constraintLeft_toLeftOf="@+id/edtPhone"
+        app:layout_constraintRight_toRightOf="@+id/edtPhone" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_0_5"
+        android:background="@color/color_E6E6E6"
+        app:layout_constraintBottom_toBottomOf="@+id/edtPwd"
+        app:layout_constraintLeft_toLeftOf="@+id/edtPhone"
+        app:layout_constraintRight_toRightOf="@+id/edtPhone" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnForgetPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_17"
+        android:text="@string/string_pwd_forget"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintRight_toRightOf="@+id/edtPwd"
+        app:layout_constraintTop_toBottomOf="@+id/edtPwd" />
+</androidx.constraintlayout.widget.ConstraintLayout>

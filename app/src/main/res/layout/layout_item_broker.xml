@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/dp_12">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/brokerIcon"
+        app:shapeAppearance="@style/StyleCorner5"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:background="@color/white"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/color_666666"
+        app:strokeWidth="0.5dp"
+        tools:src="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/labelText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_broker_label"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@id/brokerIcon"
+        app:layout_constraintTop_toTopOf="@+id/brokerIcon"
+        tools:text="监管中" />
+
+    <TextView
+        android:id="@+id/brokerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/brokerIcon"
+        app:layout_constraintTop_toTopOf="@+id/brokerIcon"
+        tools:text="FXTM 嘉盛集团" />
+
+    <TextView
+        android:id="@+id/brokerMark"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_999999"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/brokerIcon"
+        app:layout_constraintLeft_toLeftOf="@+id/brokerName"
+        app:layout_constraintLeft_toRightOf="@+id/brokerIcon"
+        tools:text="10-15年 | 澳大利亚监管 | 全牌照（MM）| 主标MT4123" />
+
+    <TextView
+        android:id="@+id/brokerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="要懂匯评分"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/brokerMark"
+        app:layout_constraintLeft_toLeftOf="@+id/brokerName"
+        app:layout_constraintTop_toBottomOf="@+id/brokerName" />
+
+    <TextView
+        android:id="@+id/brokerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:background="@drawable/shape_bg_list_score"
+        android:paddingHorizontal="5dp"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/brokerText"
+        app:layout_constraintLeft_toRightOf="@+id/brokerText"
+        app:layout_constraintTop_toTopOf="@+id/brokerText"
+        tools:text="8.32" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_e6"
+        android:paddingHorizontal="5dp"
+        android:text="浏览"
+        android:textColor="@color/color_999999"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/brokerIcon" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/brokerRankIcon"
+        android:layout_width="@dimen/dp_35"
+        android:layout_height="@dimen/dp_35"
+        android:adjustViewBounds="true"
+        android:src="@drawable/level_icon_rank"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/brokerRankText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/color_666666"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/brokerRankIcon"
+        app:layout_constraintLeft_toLeftOf="@+id/brokerRankIcon"
+        app:layout_constraintRight_toRightOf="@+id/brokerRankIcon"
+        app:layout_constraintTop_toTopOf="@+id/brokerRankIcon"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/brokerWatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_e6"
+        android:paddingHorizontal="@dimen/dp_5"
+        android:text="浏览"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/brokerName"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/brokerName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

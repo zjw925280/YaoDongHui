@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        android:paddingHorizontal="@dimen/dp_12"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="因油价走软、加央行评论偏鸽派，美元加元多头关注1.3480附近月度阻力" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/headIv"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_10"
+        android:adjustViewBounds="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv"
+        tools:src="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_3"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/headIv"
+        app:layout_constraintLeft_toRightOf="@+id/headIv"
+        app:layout_constraintTop_toTopOf="@+id/headIv"
+        tools:text="真相小哥" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/timeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@id/headIv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/headIv"
+        tools:text="3小时前" />
+
+    <!--    <net.knowfx.yaodonghui.ui.views.DouVideoPlayer-->
+    <!--        android:id="@+id/videoPlayer"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="@dimen/dp_210"-->
+    <!--        android:layout_marginTop="@dimen/dp_12"-->
+    <!--        android:background="@color/color_999999"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/timeTv" />-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/videoPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_210"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/timeTv" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:adjustViewBounds="true"
+        android:background="@mipmap/icon_video_play_bg"
+        android:paddingVertical="@dimen/dp_16"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/icon_video_play"
+        app:layout_constraintBottom_toBottomOf="@+id/videoPlayer"
+        app:layout_constraintLeft_toLeftOf="@+id/videoPlayer"
+        app:layout_constraintRight_toRightOf="@+id/videoPlayer"
+        app:layout_constraintTop_toTopOf="@+id/videoPlayer" />
+
+    <net.knowfx.yaodonghui.ui.views.BtnWithRightTextView
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_10"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnComment"
+        app:layout_constraintTop_toBottomOf="@+id/videoPlayer" />
+
+    <net.knowfx.yaodonghui.ui.views.BtnWithRightTextView
+        android:id="@+id/btnComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/btnShare"
+        app:layout_constraintRight_toLeftOf="@+id/btnFocus"
+        app:layout_constraintTop_toBottomOf="@+id/videoPlayer" />
+
+    <net.knowfx.yaodonghui.ui.views.BtnWithRightTextView
+        android:id="@+id/btnFocus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_10"
+        app:layout_constraintLeft_toRightOf="@+id/btnComment"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoPlayer" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:background="@color/color_E6E6E6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnShare" />
+</androidx.constraintlayout.widget.ConstraintLayout>

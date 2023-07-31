@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_0_5"
+    android:background="@color/color_F7F7F7"
+    android:paddingHorizontal="@dimen/dp_12">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textDate"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2023-02-12" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_mine_function"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_16"
+        app:layout_constraintTop_toBottomOf="@+id/textDate">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivThumb"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textContent"
+            app:layout_constraintLeft_toRightOf="@+id/ivThumb"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivThumb"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="嘉盛集团股票一路下跌" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_5"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintBottom_toBottomOf="@+id/ivThumb"
+            app:layout_constraintLeft_toRightOf="@+id/ivThumb"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            tools:text="新增创建分享可进行权限设置的功能，哈哈哈哈哈哈哈啊哈哈哈哈哈" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

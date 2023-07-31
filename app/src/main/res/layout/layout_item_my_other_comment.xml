@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_20"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="2023-12-03 18:23" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_6"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime"
+        tools:text="Fdsd无名中建鑫宏鼎环境集团有限公司诱导客户存入大量资金，有诈骗嫌疑。集团诈骗，希望有关部门严查！" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dealerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_13"
+        android:background="@drawable/shape_bg_f7_4"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/tvContent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/thumbIv"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:background="@drawable/shape_bg_68c4e2_2"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/dp_3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toBottomOf="@+id/titleTv"
+            app:layout_constraintLeft_toRightOf="@+id/thumbIv"
+            app:layout_constraintTop_toTopOf="@+id/titleTv"
+            tools:text="新闻" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@+id/labelTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/thumbIv"
+            tools:text="这种平台一般都还会有出不了金的大问题，你要出金他设置套路让你继续入金，然后带你爆仓，甚至跑路。其实这种平台为资金盘(诈骗)，是指运用值所谓资金盘，是指运用值销倍增原理，以滚动或静态的资金流通形式，拆东墙补西墙，用后加入会员的钱支付给前面会员的网络传销形式，本质是金字塔式传销诈骗。" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintBottom_toBottomOf="@+id/thumbIv"
+            app:layout_constraintLeft_toRightOf="@+id/thumbIv"
+            app:layout_goneMarginBottom="@dimen/dp_2"
+            tools:text="@string/string_text_supervise_news_name_time" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

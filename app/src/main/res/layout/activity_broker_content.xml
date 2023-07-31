@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.BrokerContentActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/titleBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/bg_broker_content_status"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/dp_17"
+        android:src="@mipmap/btn_back_w"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginEnd="@dimen/dp_7"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_17"
+        android:src="@mipmap/btn_share_w"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnFocus"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:adjustViewBounds="true"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_17"
+        android:scaleType="centerInside"
+        android:src="@drawable/selector_focus_w"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintRight_toLeftOf="@+id/btnShare" />
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/dp_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/topBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_broker_content_top"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/copLogo"
+                    android:layout_width="@dimen/dp_135"
+                    android:layout_height="@dimen/dp_75"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/copLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_broker_label"
+                    android:paddingHorizontal="@dimen/dp_5"
+                    android:paddingVertical="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_10"
+                    app:layout_constraintLeft_toLeftOf="@+id/copLogo"
+                    app:layout_constraintTop_toTopOf="@+id/copLogo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/copName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_9"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_21"
+                    android:textStyle="bold"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    app:layout_constraintLeft_toRightOf="@+id/copLogo"
+                    app:layout_constraintTop_toTopOf="@+id/copLogo"
+                    tools:text="FXTM 嘉盛集团" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/countryIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_9"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerInside"
+                    app:layout_constraintLeft_toRightOf="@+id/copLogo"
+                    app:layout_constraintTop_toBottomOf="@+id/copName"
+                    tools:src="@mipmap/icon_splash_center" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/copLabelText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_4"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toRightOf="@+id/countryIcon"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/countryIcon"
+                    tools:text="10-15年" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/scoreBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/bg_shape_broker_score"
+                app:layout_constraintBottom_toTopOf="@+id/webSetBg"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tradeEnvBg"
+                app:layout_constraintTop_toBottomOf="@+id/layoutProfile"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_weight="1" />
+
+            <View
+                android:id="@+id/tradeEnvBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_5"
+                android:background="@drawable/bg_shape_broker_trade_env"
+                app:layout_constraintBottom_toBottomOf="@+id/scoreBg"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@+id/scoreBg"
+                app:layout_constraintRight_toLeftOf="@+id/labelBg"
+                app:layout_constraintTop_toTopOf="@+id/scoreBg" />
+
+            <View
+                android:id="@+id/labelBg"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_5"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:background="@drawable/bg_shape_broker_label"
+                app:layout_constraintBottom_toBottomOf="@+id/scoreBg"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@+id/tradeEnvBg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/scoreBg" />
+
+            <View
+                android:id="@+id/webSetBg"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="@drawable/bg_shape_broker_webset"
+                app:layout_constraintBottom_toBottomOf="@+id/topBg"
+                app:layout_constraintLeft_toLeftOf="@+id/scoreBg"
+                app:layout_constraintRight_toRightOf="@+id/labelBg"
+                app:layout_constraintTop_toBottomOf="@+id/scoreBg" />
+
+            <net.knowfx.yaodonghui.ui.views.AnimationNumberTextView
+                android:id="@+id/scoreTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:gravity="end"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_28"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/scoreText"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="@id/scoreBg"
+                app:layout_constraintRight_toLeftOf="@+id/totalScore"
+                app:layout_constraintTop_toTopOf="@+id/scoreBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="8.65" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/totalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_6"
+                android:gravity="start"
+                android:text="@string/string_score_total"
+                android:textColor="#7FFFFFFF"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBaseline_toBaselineOf="@+id/scoreTv"
+                app:layout_constraintLeft_toRightOf="@+id/scoreTv"
+                app:layout_constraintRight_toRightOf="@+id/scoreBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/scoreText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_13"
+                android:gravity="center_horizontal"
+                android:text="@string/string_text_score"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/scoreBg"
+                app:layout_constraintLeft_toLeftOf="@+id/scoreBg"
+                app:layout_constraintRight_toRightOf="@id/scoreBg"
+                app:layout_constraintTop_toBottomOf="@+id/scoreTv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tradeEnv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_28"
+                app:layout_constraintBottom_toTopOf="@+id/tradeEnvText"
+                app:layout_constraintLeft_toLeftOf="@+id/tradeEnvBg"
+                app:layout_constraintRight_toRightOf="@+id/tradeEnvBg"
+                app:layout_constraintTop_toTopOf="@+id/tradeEnvBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="AAA" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tradeEnvText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:gravity="center_horizontal"
+                android:text="@string/string_text_trade_env"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tradeEnvBg"
+                app:layout_constraintLeft_toLeftOf="@+id/tradeEnvBg"
+                app:layout_constraintRight_toRightOf="@+id/tradeEnvBg"
+                app:layout_constraintTop_toBottomOf="@+id/tradeEnv" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_28"
+                app:layout_constraintBottom_toTopOf="@+id/labelText"
+                app:layout_constraintLeft_toLeftOf="@+id/labelBg"
+                app:layout_constraintRight_toRightOf="@+id/labelBg"
+                app:layout_constraintTop_toTopOf="@+id/labelBg"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="主标" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/labelText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_6"
+                android:gravity="center_horizontal"
+                android:text="@string/string_text_broker_label"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/labelBg"
+                app:layout_constraintLeft_toLeftOf="@+id/labelBg"
+                app:layout_constraintRight_toRightOf="@+id/labelBg"
+                app:layout_constraintTop_toBottomOf="@+id/label" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/webSetIcon"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_14"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/icon_webset"
+                app:layout_constraintBottom_toBottomOf="@+id/webSetBg"
+                app:layout_constraintLeft_toLeftOf="@+id/webSetBg"
+                app:layout_constraintTop_toTopOf="@+id/webSetBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/webSetText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_6"
+                android:gravity="center"
+                android:text="@string/string_text_web_set"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/webSetBg"
+                app:layout_constraintLeft_toRightOf="@+id/webSetIcon"
+                app:layout_constraintTop_toTopOf="@+id/webSetBg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/webSetCopy"
+                android:layout_width="@dimen/dp_34"
+                android:layout_height="@dimen/dp_34"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/dp_9"
+                android:src="@mipmap/btn_copy"
+                app:layout_constraintBottom_toBottomOf="@id/webSetBg"
+                app:layout_constraintRight_toRightOf="@+id/webSetBg"
+                app:layout_constraintTop_toTopOf="@+id/webSetBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/webSet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/dp_25"
+                android:ellipsize="end"
+                android:gravity="center_vertical|end"
+                android:lines="1"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/webSetBg"
+                app:layout_constraintLeft_toRightOf="@+id/webSetText"
+                app:layout_constraintRight_toLeftOf="@+id/webSetCopy"
+                app:layout_constraintTop_toTopOf="@+id/webSetBg"
+                tools:text="http://jilingkeji.com/" />
+
+            <FrameLayout
+                android:id="@+id/layoutSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@+id/topBg">
+
+                <include
+                    android:id="@+id/layoutHelp"
+                    layout="@layout/layout_dealer_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/layoutWarn"
+                    layout="@layout/layout_dealer_warn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/superviseInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/string_text_supervise_info"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutSwitch" />
+
+            <FrameLayout
+                android:id="@+id/layoutSup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@+id/superviseInfoText">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/superviseRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:visibility="gone"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/layout_item_supervise" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layoutSupEmpty"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:gravity="center">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_16"
+                        android:adjustViewBounds="true"
+                        android:src="@mipmap/icon_warn_gray" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="暂未查证到有效的监管信息，请注意风险！"
+                        android:textColor="@color/color_999999"
+                        android:textSize="@dimen/sp_14" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </FrameLayout>
+
+            <View
+                android:id="@+id/mailBg"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:background="@drawable/shape_bg_white_20_e6"
+                android:paddingVertical="@dimen/dp_10"
+                app:layout_constraintHorizontal_weight="6"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/phoneBg"
+                app:layout_constraintTop_toBottomOf="@+id/layoutSup" />
+
+            <View
+                android:id="@+id/phoneBg"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:background="@drawable/shape_bg_white_20_e6"
+                android:gravity="center_vertical"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintLeft_toRightOf="@+id/mailBg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutSup" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mailIcon"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_12"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/icon_mail_box"
+                app:layout_constraintBottom_toBottomOf="@+id/mailBg"
+                app:layout_constraintLeft_toLeftOf="@+id/mailBg"
+                app:layout_constraintTop_toTopOf="@+id/mailBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mailText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/mailBg"
+                app:layout_constraintLeft_toRightOf="@+id/mailIcon"
+                app:layout_constraintRight_toRightOf="@+id/mailBg"
+                app:layout_constraintTop_toTopOf="@+id/mailBg"
+                tools:text="jilingkeji@369.com" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/phoneIcon"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginStart="@dimen/dp_12"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/icon_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneBg"
+                app:layout_constraintLeft_toLeftOf="@+id/phoneBg"
+                app:layout_constraintTop_toTopOf="@+id/phoneBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/phoneText"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_4"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneBg"
+                app:layout_constraintLeft_toRightOf="@+id/phoneIcon"
+                app:layout_constraintRight_toRightOf="@+id/phoneBg"
+                app:layout_constraintTop_toTopOf="@+id/phoneBg"
+                tools:text="17756239562" />
+
+            <net.knowfx.yaodonghui.ui.views.MyBanner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@+id/mailBg" />
+
+            <View
+                android:id="@+id/exploreBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_198"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_28"
+                android:background="@drawable/shape_bg_broker_list"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+            <View
+                android:id="@+id/commentBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_198"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/shape_bg_broker_list"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/exploreBg" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/exploreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:background="@drawable/bg_btn_confirm"
+                android:ems="2"
+                android:gravity="center_horizontal"
+                android:minWidth="@dimen/dp_13"
+                android:paddingHorizontal="@dimen/dp_7"
+                android:paddingVertical="@dimen/dp_6"
+                android:text="@string/string_text_i_explore"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/exploreBg"
+                app:layout_constraintLeft_toLeftOf="@+id/exploreBg"
+                app:layout_constraintTop_toTopOf="@+id/exploreBg" />
+
+            <View
+                android:id="@+id/exploreDiv"
+                android:layout_width="@dimen/dp_0_5"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_7"
+                android:background="@color/color_E6E6E6"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/exploreBg"
+                app:layout_constraintLeft_toRightOf="@+id/exploreText"
+                app:layout_constraintTop_toTopOf="@+id/exploreBg" />
+
+            <net.knowfx.yaodonghui.ui.views.AutoScrollRecyclerView
+                android:id="@+id/exploreRv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/exploreBg"
+                app:layout_constraintLeft_toRightOf="@+id/exploreDiv"
+                app:layout_constraintRight_toRightOf="@+id/exploreBg"
+                app:layout_constraintTop_toTopOf="@+id/exploreBg"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_item_supervise_explore" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/commentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_7"
+                android:background="@drawable/bg_btn_confirm"
+                android:ems="2"
+                android:gravity="center_horizontal"
+                android:minWidth="@dimen/dp_13"
+                android:paddingHorizontal="@dimen/dp_7"
+                android:paddingVertical="@dimen/dp_6"
+                android:text="@string/string_text_i_comment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/commentBg"
+                app:layout_constraintLeft_toLeftOf="@+id/commentBg"
+                app:layout_constraintTop_toTopOf="@+id/commentBg" />
+
+            <View
+                android:id="@+id/commentDiv"
+                android:layout_width="@dimen/dp_0_5"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_7"
+                android:background="@color/color_E6E6E6"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/commentBg"
+                app:layout_constraintLeft_toRightOf="@+id/commentText"
+                app:layout_constraintTop_toTopOf="@+id/commentBg" />
+
+            <net.knowfx.yaodonghui.ui.views.AutoScrollRecyclerView
+                android:id="@+id/commentRv"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/commentBg"
+                app:layout_constraintLeft_toRightOf="@+id/commentDiv"
+                app:layout_constraintRight_toRightOf="@+id/commentBg"
+                app:layout_constraintTop_toTopOf="@+id/commentBg"
+                tools:itemCount="3"
+                tools:listitem="@layout/layout_item_supervise_comment" />
+
+            <View
+                android:id="@+id/superviseDiv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/color_F7F7F7"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/commentBg" />
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/newsRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                app:layout_constraintTop_toBottomOf="@+id/superviseDiv">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newsRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/layout_item_supervise_news" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/watchView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <View
+        android:id="@+id/floatBtn"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginEnd="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_24"
+        android:background="@drawable/shape_bg_float_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/floatICon"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_24"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_home"
+        app:layout_constraintBottom_toTopOf="@+id/floatText"
+        app:layout_constraintLeft_toLeftOf="@+id/floatBtn"
+        app:layout_constraintRight_toRightOf="@+id/floatBtn"
+        app:layout_constraintTop_toTopOf="@+id/floatBtn"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/floatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:text="@string/string_text_home"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/floatBtn"
+        app:layout_constraintLeft_toLeftOf="@+id/floatBtn"
+        app:layout_constraintRight_toRightOf="@+id/floatBtn"
+        app:layout_constraintTop_toBottomOf="@+id/floatICon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

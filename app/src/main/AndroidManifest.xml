@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <queries>
+        <package android:name="com.tencent.mm" /> <!-- 指定微信包名 -->
+        <package android:name="com.tencent.mobileqq" /> <!-- 指定qq包名 -->
+        <package android:name="com.qzone" /> <!-- 指定QQ空间包名 -->
+
+    </queries>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="net.knowfx.yaodonghui.permission.JOPERATE_MESSAGE" />
+
+    <queries>
+        <package android:name="com.tencent.mm" /> <!-- 指定微信包名 -->
+    </queries>
+
+    <application
+        android:name=".utils.MyApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.YaoDongHui"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.activity.ArticleCommentContentActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.WebActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor" />
+        <activity
+            android:name=".ui.activity.WatchExploreActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.WatchBrokerActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ScreenCaptureActivity"
+            android:exported="false"
+            android:theme="@style/ActivityThemeDialog" />
+        <activity
+            android:name=".ui.activity.ExploreSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.ContractActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ExploreCommentContentActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ClassSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.MessageActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.MessageHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.PushHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.FeedbackActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.WatchHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.SuperviseDealerSearchActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.DrawSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.ArticleSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.VersionActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.BrandEventActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.FunctionAllActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.FindPwdActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.RegisterActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden" />
+        <activity
+            android:name=".ui.activity.SuperviseContentActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.SuperviseInfoActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.LegalAidActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.AuthenticationActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.CommentExplorePostActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.BrokerContentActivity"
+            android:exported="false"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.activity.ArticleContentActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ArticleListActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.DrawContentActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.DrawListActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ClassContentActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"/>
+        <activity
+            android:name=".ui.activity.ClassListActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.BrokerSearchActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ui.activity.BusinessWorkActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.MyWatchHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.MyFocusActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.MyPostHistoryActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.AboutActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.ModifyPwdActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="nosensor"/>
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:exported="false"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 第三方相关定义 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="net.knowfx.yaodonghui"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            tools:replace="android:configChanges" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".utils.JPushService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":pushcore">
+            <intent-filter>
+                <action android:name="cn.jiguang.user.service.action" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".utils.JPushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="net.knowfx.yaodonghui" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

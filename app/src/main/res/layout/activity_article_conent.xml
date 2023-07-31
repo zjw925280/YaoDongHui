@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ArticleContentActivity">
+
+    <View
+        android:id="@+id/titleBg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/windowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_truth_content_title"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/dp_15"
+        android:src="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/commentBar"
+        app:layout_constraintTop_toBottomOf="@+id/titleBg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/articleTitleTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:ellipsize="end"
+                android:lines="2"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_18"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="NTTSFX黑平台找巨多的理由不给出金  还会找人跟你聊天拖延时间" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userThumbIv"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/articleTitleTv"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/userNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toTopOf="@id/timeTv"
+                app:layout_constraintLeft_toRightOf="@+id/userThumbIv"
+                app:layout_constraintTop_toTopOf="@id/userThumbIv"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="皆是远方" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/timeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/userThumbIv"
+                app:layout_constraintLeft_toLeftOf="@+id/userNameTv"
+                app:layout_constraintTop_toBottomOf="@+id/userNameTv"
+                tools:text="2023-02-13    14:25" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/dealerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_bg_f7_5"
+                android:padding="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@+id/userThumbIv">
+
+                <include
+                    android:id="@+id/dealer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/layout_item_broker" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <org.sufficientlysecure.htmltextview.HtmlTextView
+                android:id="@+id/contentTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dealerLayout"
+                tools:text="这种平台一般都还会有出不了金的大问题，你要出金他设置套路让你继续入金，然后带你爆仓，甚至跑路。其实这种平台为资金盘(诈骗)，是指运用值所谓资金盘，是指运用值销倍增原理，以滚动或静态的资金流通形式，拆东墙补西墙，用后加入会员的钱支付给前面会员的网络传销形式，本质是金字塔式传销诈骗。极具隐蔽性、欺骗性和社会危害性。忽悠起老百姓的贪财欲望，进行地下集资的模式。这种集资很少有超过三年的，因为到了一两年的时候，资金盘主就大多卷款而逃了。" />
+
+            <include
+                android:id="@+id/commentLayout"
+                layout="@layout/layout_common_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_16"
+                app:layout_constraintTop_toBottomOf="@+id/contentTv" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/commentBar"
+        layout="@layout/layout_comment_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_55"
+        android:layout_marginStart="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

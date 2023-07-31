@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F7F7F7"
+    tools:context=".ui.activity.CommentExplorePostActivity">
+
+    <View
+        android:id="@+id/titleBg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/windowTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_text_i_comment"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/dp_15"
+        android:src="@mipmap/icon_back"
+        app:layout_constraintBottom_toBottomOf="@+id/titleBg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleBg" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/postBg"
+        app:layout_constraintTop_toBottomOf="@+id/titleBg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/brokerBg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_55"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/white"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/brokerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:text="@string/string_text_broker_comment"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/brokerBg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/brokerBg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/brokerLogo"
+                android:layout_width="@dimen/dp_21"
+                android:layout_height="@dimen/dp_21"
+                android:layout_marginStart="@dimen/dp_38"
+                app:layout_constraintBottom_toBottomOf="@+id/brokerBg"
+                app:layout_constraintLeft_toRightOf="@+id/brokerText"
+                app:layout_constraintTop_toTopOf="@+id/brokerBg"
+                tools:src="@mipmap/ic_launcher" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/brokerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_18"
+                android:ellipsize="end"
+                android:lines="1"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBottom_toBottomOf="@+id/brokerBg"
+                app:layout_constraintLeft_toRightOf="@+id/brokerLogo"
+                app:layout_constraintRight_toLeftOf="@+id/brokerMore"
+                app:layout_constraintTop_toTopOf="@+id/brokerBg"
+                tools:text="FORTY 盾博集团" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/brokerMore"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="@dimen/dp_20"
+                android:src="@mipmap/icon_right_arrow"
+                app:layout_constraintBottom_toBottomOf="@+id/brokerBg"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/brokerBg" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@color/white"
+                android:paddingHorizontal="@dimen/dp_12"
+                app:layout_constraintTop_toBottomOf="@+id/brokerBg">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleSimple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* "
+                    android:textColor="@color/color_EB1313"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/titleText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/string_text_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleEdt"
+                    app:layout_constraintLeft_toRightOf="@+id/titleSimple"
+                    app:layout_constraintTop_toTopOf="@+id/titleEdt" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/color_E6E6E6"
+                    app:layout_constraintBottom_toBottomOf="@+id/titleEdt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/typeSimple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="* "
+                    android:textColor="@color/color_EB1313"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/typeText" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/typeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/string_explore_type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/typeSelector"
+                    app:layout_constraintLeft_toRightOf="@+id/typeSimple"
+                    app:layout_constraintTop_toTopOf="@+id/typeSelector" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/color_E6E6E6"
+                    app:layout_constraintBottom_toBottomOf="@+id/typeSelector" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/contentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_170"
+                    android:text="@string/string_text_comment_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/contentEdt"
+                    app:layout_constraintVertical_weight="1" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="@color/color_E6E6E6"
+                    app:layout_constraintBottom_toBottomOf="@+id/contentText" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/titleEdt"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_marginStart="@dimen/dp_38"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:hint="@string/string_hint_comment_title"
+                    android:lines="1"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_D8D8D8"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toTopOf="@+id/typeSelector"
+                    app:layout_constraintLeft_toRightOf="@+id/contentText"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <RadioGroup
+                    android:id="@+id/typeSelector"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_50"
+                    android:checkedButton="0"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingVertical="@dimen/dp_10"
+                    app:layout_constraintBottom_toTopOf="@+id/contentEdt"
+                    app:layout_constraintLeft_toLeftOf="@+id/titleEdt"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleEdt">
+
+                    <RadioButton
+                        android:id="@+id/selectorNoMoney"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_bg_explorer_type"
+                        android:button="@android:color/transparent"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/dp_7"
+                        android:text="@string/string_explore_type_no_money"
+                        android:textColor="@color/color_text_selector"
+                        android:textSize="@dimen/sp_12" />
+
+                    <RadioButton
+                        android:id="@+id/selectorSlip"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_bg_explorer_type"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/dp_7"
+                        android:text="@string/string_explore_type_slip"
+                        android:textColor="@color/color_text_selector"
+                        android:textSize="@dimen/sp_12" />
+
+                    <RadioButton
+                        android:id="@+id/selectorCheat"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_bg_explorer_type"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/dp_7"
+                        android:text="@string/string_explore_type_cheat"
+                        android:textColor="@color/color_text_selector"
+                        android:textSize="@dimen/sp_12" />
+
+                    <RadioButton
+                        android:id="@+id/selectorOther"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_bg_explorer_type"
+                        android:button="@android:color/transparent"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/dp_7"
+                        android:text="@string/string_explore_type_other"
+                        android:textColor="@color/color_text_selector"
+                        android:textSize="@dimen/sp_12" />
+                </RadioGroup>
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/contentEdt"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_16"
+                    android:background="@android:color/transparent"
+                    android:gravity="start"
+                    android:hint="@string/string_hint_comment_content"
+                    android:lines="1"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_D8D8D8"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintBottom_toBottomOf="@+id/contentBg"
+                    app:layout_constraintLeft_toLeftOf="@+id/titleEdt"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/typeSelector"
+                    app:layout_constraintVertical_weight="1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/photoBg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="@dimen/dp_12"
+                android:paddingTop="@dimen/dp_16"
+                android:paddingBottom="@dimen/dp_20"
+                app:layout_constraintTop_toBottomOf="@+id/contentBg">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/photoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_upload_pic"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/photoBg" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/photoRv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_38"
+                    android:layout_weight="1"
+                    tools:itemCount="1"
+                    tools:listitem="@layout/layout_item_pic"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/postBg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginBottom="-23dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/postBtn"
+        app:layout_constraintTop_toTopOf="@+id/postBtn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/postBtn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_23"
+        android:background="@drawable/shape_bg_list_score"
+        android:gravity="center"
+        android:text="@string/string_post"
+        android:textColor="@color/color_9C67E6"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

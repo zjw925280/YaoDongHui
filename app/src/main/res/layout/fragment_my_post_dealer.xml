@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.FragmentMyPostDealer">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/listTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/bg_tab_second"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="0dp"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/Appearance.Text.Tab2"
+        app:tabTextColor="@color/color_999999" />
+
+    <net.knowfx.yaodonghui.ui.views.ViewPager2Container
+        android:id="@+id/maskVp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listTab">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/listVp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </net.knowfx.yaodonghui.ui.views.ViewPager2Container>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

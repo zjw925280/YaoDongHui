@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F7F7F7"
+    tools:context=".ui.fragment.FragmentMine">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mineBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/bg_mine"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/mineBgFunction"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="-75dp"
+        android:background="@drawable/bg_mine_function"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mineBg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mineAvatar"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_marginStart="23dp"
+        android:layout_marginBottom="32dp"
+        android:src="@mipmap/ic_avatar_default"
+        app:layout_constraintBottom_toTopOf="@+id/mineBgFunction"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineLayoutLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/mineAvatar"
+        app:layout_constraintLeft_toRightOf="@+id/mineAvatar"
+        app:layout_constraintTop_toTopOf="@+id/mineAvatar">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mineBtnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_login_text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_divide"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mineBtnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/string_register_text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineLayoutInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/mineAvatar"
+        app:layout_constraintLeft_toRightOf="@+id/mineAvatar"
+        app:layout_constraintTop_toTopOf="@+id/mineAvatar">
+
+        <TextView
+            android:id="@+id/mineTextNickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="哈哈哈哈哈 " />
+
+        <TextView
+            android:id="@+id/mineTextId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/bg_mine_id"
+            android:gravity="center"
+            android:paddingHorizontal="9dp"
+            android:textColor="#D8D8D8"
+            android:textSize="12sp"
+            tools:text="ID:123456789" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mineBtnCom"
+        app:layout_constraintLeft_toLeftOf="@+id/mineBgFunction"
+        app:layout_constraintRight_toLeftOf="@+id/mineBtnFocus"
+        app:layout_constraintTop_toTopOf="@+id/mineBgFunction">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_post" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_my_post_text"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnFocus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mineBtnShare"
+        app:layout_constraintLeft_toRightOf="@+id/mineBtnPost"
+        app:layout_constraintRight_toLeftOf="@+id/mineBtnLookHistory"
+        app:layout_constraintTop_toTopOf="@+id/mineBgFunction">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_focus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_my_focus_text"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnLookHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/mineBtnPushHistory"
+        app:layout_constraintLeft_toRightOf="@+id/mineBtnFocus"
+        app:layout_constraintRight_toRightOf="@+id/mineBgFunction"
+        app:layout_constraintTop_toTopOf="@+id/mineBgFunction">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_watch_history" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_watch_history_text"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnCom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/mineBgFunction"
+        app:layout_constraintLeft_toLeftOf="@id/mineBgFunction"
+        app:layout_constraintRight_toLeftOf="@+id/mineBtnShare"
+        app:layout_constraintTop_toBottomOf="@+id/mineBtnPost">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_com" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_business_comp_text"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/mineBgFunction"
+        app:layout_constraintLeft_toRightOf="@+id/mineBtnCom"
+        app:layout_constraintRight_toLeftOf="@+id/mineBtnPushHistory"
+        app:layout_constraintTop_toBottomOf="@+id/mineBtnFocus">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_share" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_btn_share"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/mineBtnPushHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/mineBgFunction"
+        app:layout_constraintLeft_toRightOf="@+id/mineBtnShare"
+        app:layout_constraintRight_toRightOf="@id/mineBgFunction"
+        app:layout_constraintTop_toBottomOf="@+id/mineBtnLookHistory">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/btn_mine_push_history" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/string_push_history_text"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/mineBgBottom"
+        android:layout_width="match_parent"
+        android:layout_height="165dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_mine_function"
+        app:layout_constraintTop_toBottomOf="@+id/mineBgFunction" />
+
+    <TextView
+        android:id="@+id/mineLabelLau"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:layout_marginStart="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:text="@string/string_language_text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mineBgBottom"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom"
+        app:layout_constraintTop_toTopOf="@+id/mineBgBottom" />
+
+    <TextView
+        android:id="@+id/mineLabelFeedback"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:gravity="center_vertical"
+        android:layout_marginStart="@dimen/dp_15"
+        android:text="@string/string_feedback_text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@+id/mineBgBottom"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom"
+        app:layout_constraintTop_toBottomOf="@+id/mineLabelLau" />
+
+    <TextView
+        android:id="@+id/mineLabelAbout"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_55"
+        android:paddingStart="@dimen/dp_15"
+        android:gravity="center_vertical"
+        android:text="@string/string_about_us_text"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom"
+        app:layout_constraintLeft_toLeftOf="@+id/mineBgBottom"
+        app:layout_constraintTop_toBottomOf="@+id/mineLabelFeedback" />
+
+    <TextView
+        android:id="@+id/mineBtnLau"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:text="@string/string_language_sc_text"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/mineLabelLau"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom"
+        app:layout_constraintTop_toTopOf="@+id/mineBgBottom" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mineBtnFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:adjustViewBounds="true"
+        android:paddingVertical="@dimen/dp_20"
+        android:paddingStart="@dimen/dp_15"
+        android:paddingEnd="0dp"
+        android:src="@mipmap/icon_right_arrow"
+        app:layout_constraintTop_toTopOf="@+id/mineLabelFeedback"
+        app:layout_constraintBottom_toBottomOf="@+id/mineLabelFeedback"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom" />
+
+    <TextView
+        android:id="@+id/mineBtnAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:textColor="@color/color_999999"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@+id/mineLabelAbout"
+        app:layout_constraintBottom_toBottomOf="@+id/mineLabelAbout"
+        app:layout_constraintRight_toLeftOf="@+id/mineArrowAbout"
+        tools:text="2.3.0" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mineArrowAbout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_15"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_right_arrow"
+        app:layout_constraintTop_toTopOf="@+id/mineLabelAbout"
+        app:layout_constraintBottom_toBottomOf="@+id/mineLabelAbout"
+        app:layout_constraintRight_toRightOf="@+id/mineBgBottom" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/mineBtnSetting"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:adjustViewBounds="true"
+        android:padding="@dimen/dp_15"
+        android:src="@mipmap/btn_mine_setting"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

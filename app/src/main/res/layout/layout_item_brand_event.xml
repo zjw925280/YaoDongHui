@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivTime"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_12"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/icon_event_time"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_6"
+        android:textColor="@color/color_999999"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/ivTime"
+        app:layout_constraintLeft_toRightOf="@+id/ivTime"
+        app:layout_constraintTop_toTopOf="@+id/ivTime"
+        tools:text="2023-02-13   14:14" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/bg_mine_function"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dp_10"
+        android:paddingVertical="@dimen/dp_16"
+        app:layout_constraintLeft_toLeftOf="@+id/tvTime"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTime">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/sp_16"
+            tools:text="品牌大事件标题" />
+
+        <org.sufficientlysecure.htmltextview.HtmlTextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/sp_14"
+            tools:text="品牌大事件内容，品牌大事件内容，品牌大事件内容品牌大事件内容，品牌大事件内容品牌大事件内容，品牌大事件内容品牌大事件内容。" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/llContent" />
+
+    <View
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        android:background="#D4D4D4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/ivTime"
+        app:layout_constraintRight_toRightOf="@+id/ivTime"
+        app:layout_constraintTop_toBottomOf="@+id/ivTime" />
+</androidx.constraintlayout.widget.ConstraintLayout>

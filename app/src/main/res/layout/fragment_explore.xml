@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.FragmentExplore">
+
+    <TextView
+        android:id="@+id/exploreListTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_45"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="曝光"
+        android:textColor="@color/color_333333"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnExploreSearch"
+        android:layout_width="62dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/dp_15"
+        android:src="@mipmap/icon_search"
+        app:layout_constraintBottom_toBottomOf="@+id/exploreListTitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/exploreListTitle" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/exploreTabs"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="@dimen/dp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exploreListTitle"
+        app:tabIndicatorColor="@color/color_333333"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="2dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/color_333333"
+        app:tabTextColor="@color/color_999999" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/exploreVp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exploreTabs" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnExplore"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="43dp"
+        android:adjustViewBounds="true"
+        android:src="@mipmap/btn_explore"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

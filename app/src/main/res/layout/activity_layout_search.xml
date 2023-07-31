@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.activity.BrokerSearchActivity">
+
+    <View
+        android:id="@+id/searchBg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:background="@drawable/shape_search_bar_bg"
+        app:layout_constraintHorizontal_weight="0.82"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnCancel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btnCancel"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:gravity="center"
+        android:text="@string/string_cancel"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBg"
+        app:layout_constraintHorizontal_weight="0.18"
+        app:layout_constraintLeft_toRightOf="@+id/searchBg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchBg" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/searchIcon"
+        android:layout_width="@dimen/dp_14"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginStart="@dimen/dp_12"
+        android:src="@mipmap/icon_search"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBg"
+        app:layout_constraintLeft_toLeftOf="@+id/searchBg"
+        app:layout_constraintTop_toTopOf="@+id/searchBg" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/searchEdt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_6"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:hint="@string/string_search_broker"
+        android:imeOptions="actionSend"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_999999"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBg"
+        app:layout_constraintLeft_toRightOf="@+id/searchIcon"
+        app:layout_constraintRight_toRightOf="@+id/searchBg"
+        app:layout_constraintTop_toTopOf="@+id/searchBg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/historyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/searchBg">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/searchHistoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/string_search_history"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:paddingHorizontal="@dimen/dp_15"
+            android:src="@mipmap/btn_delete"
+            app:layout_constraintBottom_toBottomOf="@+id/searchHistoryTitle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchHistoryTitle" />
+
+        <net.knowfx.yaodonghui.ui.views.FlowLayout
+            android:id="@+id/layoutHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            app:layout_constraintTop_toBottomOf="@+id/searchHistoryTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/hotLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintTop_toBottomOf="@+id/historyLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hotTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_17"
+            android:text="@string/string_search_hot"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hotRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:layout_marginHorizontal="@dimen/dp_12"
+            app:layout_constraintTop_toBottomOf="@+id/hotTitle"
+            tools:itemCount="3"
+            tools:listitem="@layout/layout_item_search_hot" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBg"
+        app:srlEnableRefresh="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:paddingHorizontal="@dimen/dp_12"
+            android:scrollbars="none" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include
+        android:id="@+id/layoutEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        layout="@layout/layout_no_data"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBg"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
