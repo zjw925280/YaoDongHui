@@ -59,6 +59,7 @@ class FindPwdActivity : BaseActivity() {
                     //校验手机号和验证码
                     mPhone = params["phone"] ?: ""
                     mCode = params["code"] ?: ""
+                    mBinding.vpLayout.currentItem = 1
                 } else {
                     //提交新密码
                     doCommitPwd(params["pwd"] ?: params["pwdAgain"] ?: "")

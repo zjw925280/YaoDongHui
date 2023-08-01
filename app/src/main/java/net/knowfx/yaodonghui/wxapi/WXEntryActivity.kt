@@ -33,6 +33,7 @@ class WXEntryActivity: Activity() {
             override fun onResp(baseResp: BaseResp?) {
                 // 处理微信响应，例如分享成功或失败的回调
                 Log.e("回调了","回调了")
+
             }
         })
         finish()
