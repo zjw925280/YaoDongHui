@@ -3,7 +3,9 @@ package net.knowfx.yaodonghui.ui.activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.ViewModelProvider
@@ -56,6 +58,7 @@ import net.knowfx.yaodonghui.ui.dialogs.DialogHelpNotification
 import net.knowfx.yaodonghui.ui.dialogs.DialogPlatformHelp
 import net.knowfx.yaodonghui.ui.dialogs.DialogWebSet
 import net.knowfx.yaodonghui.ui.views.AutoScrollRecyclerView
+import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.DealerViewModel
 
 
@@ -445,7 +448,22 @@ class BrokerContentActivity : BaseActivity() {
 
                 mBinding.webSetCopy -> {
                     //复制网站
-                    DialogWebSet(mData.websites).show(supportFragmentManager, "")
+//                    DialogWebSet(mData.websites).show(supportFragmentManager, "")
+
+                    Log.e("数据","数据="+mData.website.replace(",",""))
+                    val url = mData.website.replace(",","") // Replace this with the URL you want to open
+                   if(url.isNotEmpty()) {
+                       val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                       startActivity(intent)
+                   }else{
+                       ToastUtils.showToast("链接是空的，请使用正确的链接")
+                   }
+//                    jumpToTarget(
+//                        this, WebActivity::class.java, hashMapOf(
+//                            Pair("url", mData.website.replace(",","")),
+//                            Pair("title", mData.fullName)
+//                        )
+//                    )
                 }
 
                 mBinding.exploreText -> {
