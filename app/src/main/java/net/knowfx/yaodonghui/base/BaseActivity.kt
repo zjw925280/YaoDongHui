@@ -39,6 +39,7 @@ import java.io.File
 
 abstract class BaseActivity : AppCompatActivity() {
 
+
     /**
      * 跳转传递的数据集合对象
      */

@@ -1,9 +1,13 @@
 package net.knowfx.yaodonghui.http
 
 object APIs {
+
+    /***********获取图形码***********/
+    const val URL_GETCODE = "ad/captchaImage"
     /***********账号相关***********/
     const val URL_REGISTER = "admin/sys/user/register"
-    const val URL_GET_PHONE_CODE = "admin/sys/user/sendSmsByPhone"
+    const val URL_GET_PHONE_UUID_CODE = "api/admin/sys/user/sendSmsByPhone"
+//    const val URL_GET_PHONE_CODE = "admin/sys/user/sendSmsByPhone"
     const val URL_FORGET_PWD = "admin/sys/user/setNewPassword"
     const val URL_LOGIN_PWD = "admin/sys/user/login"
     const val URL_LOGIN_CODE = "admin/sys/user/loginByPhone"

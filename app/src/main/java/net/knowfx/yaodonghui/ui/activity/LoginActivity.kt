@@ -3,6 +3,7 @@ package net.knowfx.yaodonghui.ui.activity
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -11,6 +12,7 @@ import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -34,7 +36,6 @@ import net.knowfx.yaodonghui.ui.fragment.BaseLoginFragment
 import net.knowfx.yaodonghui.ui.fragment.FragmentLoginPhone
 import net.knowfx.yaodonghui.ui.fragment.FragmentLoginPwd
 import net.knowfx.yaodonghui.utils.ClickControlUtil
-import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.LoginRegisterViewModel
 
 class LoginActivity : BaseActivity() {
@@ -87,6 +88,7 @@ class LoginActivity : BaseActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun getContentView(): View {
         mBinding = ActivityLoginBinding.inflate(layoutInflater)
         initViews()
@@ -97,6 +99,7 @@ class LoginActivity : BaseActivity() {
         return findPwdLauncher
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun initViews() {
         //设置用户协议和隐私策略的可点击逻辑
         val str = getString(R.string.string_login_contract)
@@ -158,6 +161,7 @@ class LoginActivity : BaseActivity() {
         addListeners()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun initFragments() {
         mFragments.add(FragmentLoginPwd())
         mFragments.add(FragmentLoginPhone())
@@ -166,6 +170,7 @@ class LoginActivity : BaseActivity() {
         setTab(mBinding.btnLoginPwd)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun addListeners() {
         setMultipleClick(
             mBinding.btnLoginPwd,
@@ -203,6 +208,7 @@ class LoginActivity : BaseActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun setTab(view: View) {
         if ((if (mBinding.vpLogin.currentItem == 0) mBinding.btnLoginPwd else mBinding.btnLoginPhone) == view) {
             return

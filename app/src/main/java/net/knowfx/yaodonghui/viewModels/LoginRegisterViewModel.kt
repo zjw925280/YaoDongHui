@@ -1,19 +1,21 @@
 package net.knowfx.yaodonghui.viewModels
 
 import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import net.knowfx.yaodonghui.BuildConfig
 import net.knowfx.yaodonghui.http.APIs
 import net.knowfx.yaodonghui.http.HttpClientManager
 import net.knowfx.yaodonghui.utils.SingleSourceLiveData
 import net.knowfx.yaodonghui.entities.Result
+import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
 
 class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
-    private val server =
-        HttpClientManager.getInstance(app).client.createService(MyServer::class.java)
 
-    val phoneCodeResult = SingleSourceLiveData<Any>()
+    private val server =  HttpClientManager.instance.client.createService(MyServer::class.java)
+
 
     val registerResult = SingleSourceLiveData<Any>()
 
@@ -21,12 +23,8 @@ class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
 
     val loginResult = SingleSourceLiveData<Any>()
 
-    /**
-     * 请求手机验证码
-     */
-    fun requestPhoneCode(phone: String) {
-        phoneCodeResult.setSource(server.requestPhoneCode(phone))
-    }
+
+
 
     /**
      * 注册账号
@@ -62,11 +60,9 @@ class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
     fun changePwd(oldPwd: String, newPwd: String) {
         modifyPwdResult.setSource(server.changePwd(oldPwd, newPwd))
     }
-
-
     private interface MyServer {
-        @POST(APIs.URL_GET_PHONE_CODE)
-        fun requestPhoneCode(@Query("phone") phone: String): LiveData<Any>
+
+
 
         @POST(APIs.URL_REGISTER)
         fun registerAccount(

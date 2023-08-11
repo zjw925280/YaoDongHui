@@ -1,8 +1,10 @@
 package net.knowfx.yaodonghui.viewModels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import net.knowfx.yaodonghui.BuildConfig
 import net.knowfx.yaodonghui.entities.AdData
 import net.knowfx.yaodonghui.entities.PicData
 import net.knowfx.yaodonghui.entities.Result
@@ -20,9 +22,9 @@ import retrofit2.http.PartMap
 import retrofit2.http.Query
 
 open class CommonViewModel(app: Application) : AndroidViewModel(app) {
-    private val commonService =
-        HttpClientManager.getInstance(app).client.createService(Service::class.java)
 
+    private val commonService1 = HttpClientManager.getInstance(app,"https://www.knowfx.net").client1.createService( Service::class.java)
+    private val commonService = HttpClientManager.getInstance(app).client.createService(Service::class.java)
     val userInfoResult = SingleSourceLiveData<Any>()
     val logoutResult = SingleSourceLiveData<Any>()
     val delAccountResult = SingleSourceLiveData<Any>()
@@ -36,6 +38,9 @@ open class CommonViewModel(app: Application) : AndroidViewModel(app) {
     val contract = SingleSourceLiveData<Any>()
     val adResult = SingleSourceLiveData<Result<AdData>>()
     val commentContent = SingleSourceLiveData<Any>()
+    val graphicCodeResult = SingleSourceLiveData<Any>()
+    val phoneUuidCodeResult = SingleSourceLiveData<Any>()
+
 
     fun getMyCommentContent(id: Int){
         commentContent.setSource(commonService.getMyCommentContent(id))
@@ -79,7 +84,12 @@ open class CommonViewModel(app: Application) : AndroidViewModel(app) {
     fun getCommentContent(id: Int) {
         exploreCommentContent.setSource(commonService.getCommentContent(id))
     }
-
+    /**
+     * 获取图形验证码
+     */
+    fun getGraphicCode() {
+        graphicCodeResult.setSource(commonService1.getGraphicCode())
+    }
     fun feedback(theme: String, content: String, phone: String, pics: ArrayList<PicData>) {
         val parts = HashMap<String, List<MultipartBody.Part>>()
         pics.isNotEmpty().trueLet {
@@ -118,7 +128,23 @@ open class CommonViewModel(app: Application) : AndroidViewModel(app) {
         adResult.setSource(commonService.getAd())
     }
 
+    /**
+     * 请求手机验证码
+     */
+    fun requestUuidPhoneCode(phone: String,code: String,uuid: String,type: String) {
+        Log.e("主要是这个uuid","主要是这个uuid=="+uuid)
+        phoneUuidCodeResult.setSource(commonService1.requestUuidPhoneCode(phone,code,uuid,type))
+    }
+
     interface Service {
+
+        @POST(APIs.URL_GET_PHONE_UUID_CODE)
+        fun requestUuidPhoneCode(@Query("phone") phone: String,@Query("code") code: String,@Query("uuid") uuid: String,@Query("type") type: String): LiveData<Any>
+
+
+        @GET(APIs.URL_GETCODE)
+        fun getGraphicCode(): LiveData<Any>
+
         @POST(APIs.URL_GET_USER_INFO)
         fun requestUserInfo(): LiveData<Any>
 

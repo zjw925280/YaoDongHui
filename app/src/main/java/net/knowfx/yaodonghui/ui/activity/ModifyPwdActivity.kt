@@ -7,10 +7,8 @@ import net.knowfx.yaodonghui.databinding.ActivityModifyPwdBinding
 import net.knowfx.yaodonghui.ext.setMultipleClick
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.ext.checkPwd
-import net.knowfx.yaodonghui.ext.logE
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
-import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.LoginRegisterViewModel
 
 class ModifyPwdActivity : BaseActivity() {

@@ -1,11 +1,14 @@
 package net.knowfx.yaodonghui.ui.fragment
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.os.CountDownTimer
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.databinding.FragmentPhoneCheckBinding
 import net.knowfx.yaodonghui.ext.dismissLoadingDialog
 import net.knowfx.yaodonghui.ext.result
@@ -14,13 +17,13 @@ import net.knowfx.yaodonghui.ext.showLoadingDialog
 import net.knowfx.yaodonghui.ext.startCountDownForGetCode
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ui.activity.FindPwdActivity
-import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.LoginRegisterViewModel
+import org.json.JSONObject
 
 class FragmentPhoneCodeCheck : BaseLoginFragment() {
     private lateinit var mViewModel: LoginRegisterViewModel
     private lateinit var mBinding: FragmentPhoneCheckBinding
-
+    private var  uuid=""
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -45,7 +48,23 @@ class FragmentPhoneCodeCheck : BaseLoginFragment() {
 
     private fun initViewModel() {
         mViewModel = ViewModelProvider(this)[LoginRegisterViewModel::class.java]
-        mViewModel.phoneCodeResult.observe(this) {
+        mViewModel.getGraphicCode()
+        mBinding.layoutPhoneCheck.btnGetGraphicCode.setOnClickListener(View.OnClickListener {
+            mViewModel.getGraphicCode()
+
+        })
+
+        mViewModel.graphicCodeResult.observe(this) {
+            //请求手机验证码成功，开始倒计时
+            dismissLoadingDialog()
+            val jsonObject = JSONObject(Gson().toJson(it))
+            uuid = jsonObject.getString("uuid")
+            val img = jsonObject.getString("img")
+            val code = base64ToBitmap(img)
+            mBinding.layoutPhoneCheck.btnGetGraphicCode.setImageBitmap(code)
+        }
+
+        mViewModel.phoneUuidCodeResult.observe(this) {
             //请求手机验证码成功，开始倒计时
             dismissLoadingDialog()
             it?.apply {
@@ -57,7 +76,10 @@ class FragmentPhoneCodeCheck : BaseLoginFragment() {
             }
         }
     }
-
+    fun base64ToBitmap(base64String: String): Bitmap? {
+        val decodedBytes = Base64.decode(base64String, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    }
     private fun initViews() {
         initViewModel()
         setMultipleClick(mBinding.btnBack, mBinding.layoutPhoneCheck.btnGetCode) {
@@ -74,9 +96,9 @@ class FragmentPhoneCodeCheck : BaseLoginFragment() {
                     }
                     //获取手机验证码
                     showLoadingDialog()
-                    mViewModel.requestPhoneCode(
-                        phone = mBinding.layoutPhoneCheck.edtPhone.text.toString().trim()
-                    )
+                    var phone=mBinding.layoutPhoneCheck.edtPhone.text.toString().trim()
+                    var code=mBinding.layoutPhoneCheck.edtGraphicCode.text.toString().trim()
+                    mViewModel.requestUuidPhoneCode(phone,code,uuid,"")
                 }
 
                 else -> {}

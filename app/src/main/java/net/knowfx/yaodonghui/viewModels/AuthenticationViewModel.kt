@@ -9,10 +9,10 @@ import net.knowfx.yaodonghui.utils.SingleSourceLiveData
 import retrofit2.http.POST
 import retrofit2.http.Query
 
-class AuthenticationViewModel(app: Application) : AndroidViewModel(app) {
+class AuthenticationViewModel(app: Application) : CommonViewModel(app) {
     private val service = HttpClientManager.instance.client.createService(Service::class.java)
 
-    val phoneCodeResult = SingleSourceLiveData<Any>()
+//    val phoneCodeResult = SingleSourceLiveData<Any>()
 
     val submitResult = SingleSourceLiveData<Result<Boolean>>()
 
@@ -20,16 +20,16 @@ class AuthenticationViewModel(app: Application) : AndroidViewModel(app) {
         submitResult.setSource(service.submitAuthentication(surname, name, idcard, code))
     }
 
-    /**
-     * 请求手机验证码
-     */
-    fun requestPhoneCode(phone: String) {
-        phoneCodeResult.setSource(service.requestPhoneCode(phone))
-    }
+//    /**
+//     * 请求手机验证码
+//     */
+//    fun requestPhoneCode(phone: String) {
+//        phoneCodeResult.setSource(service.requestPhoneCode(phone))
+//    }
 
     interface Service {
-        @POST(APIs.URL_GET_PHONE_CODE)
-        fun requestPhoneCode(@Query("phone") phone: String): LiveData<Any>
+//        @POST(APIs.URL_GET_PHONE_CODE)
+//        fun requestPhoneCode(@Query("phone") phone: String): LiveData<Any>
 
         @POST(APIs.URL_SUBMIT)
         fun submitAuthentication(

@@ -1,6 +1,7 @@
 package net.knowfx.yaodonghui.http
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.TypeAdapter
@@ -29,7 +30,6 @@ import java.util.concurrent.TimeUnit
 
 class RetrofitClient(mContext: Context, baseUrl: String) {
     private val mRetrofit: Retrofit
-
     init {
         val socketFactory = createSSLSocketFactory(mContext)
         val trustManager = createTrustAllManager()
@@ -44,6 +44,8 @@ class RetrofitClient(mContext: Context, baseUrl: String) {
             .connectTimeout(NetConfig.API_CONNECT_TIME_OUT, TimeUnit.SECONDS)
             .readTimeout(NetConfig.API_READ_TIME_OUT, TimeUnit.SECONDS)
             .writeTimeout(NetConfig.API_WRITE_TIME_OUT, TimeUnit.SECONDS)
+
+        Log.e("q请求","sss=="+baseUrl);
         val finalUrl =
             if (baseUrl.startsWith("http")) baseUrl else BuildConfig.SERVER_PATH + BuildConfig.CODE + baseUrl
         mRetrofit = Retrofit.Builder()

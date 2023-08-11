@@ -83,6 +83,7 @@
     <string name="string_hint_last_name">请输入名字</string>
     <string name="string_hint_id_code">请输入证件号码</string>
     <string name="string_hint_phone_code">请输入手机验证码</string>
+    <string name="string_Graphic_code">请输图形验证码</string>
     <string name="string_submit">提交</string>
     <string name="string_phone_code_count_down">%1$ds后重新获取</string>
     <string name="string_help_notification_title">特别提示</string>

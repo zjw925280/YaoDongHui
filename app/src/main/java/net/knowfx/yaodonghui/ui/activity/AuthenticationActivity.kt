@@ -2,9 +2,13 @@ package net.knowfx.yaodonghui.ui.activity
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.databinding.ActivityAuthenticationBinding
 import net.knowfx.yaodonghui.ext.setMultipleClick
 import net.knowfx.yaodonghui.base.BaseActivity
@@ -12,12 +16,14 @@ import net.knowfx.yaodonghui.ext.dismissLoadingDialog
 import net.knowfx.yaodonghui.ext.getUserData
 import net.knowfx.yaodonghui.ext.result
 import net.knowfx.yaodonghui.ext.saveUserData
+import net.knowfx.yaodonghui.ext.setOnclick
 import net.knowfx.yaodonghui.ext.showLoadingDialog
 import net.knowfx.yaodonghui.ext.startCountDownForGetCode
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.utils.CheckIDCardRule
 import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.AuthenticationViewModel
+import org.json.JSONObject
 
 /**
  * 实名认证的界面
@@ -25,6 +31,8 @@ import net.knowfx.yaodonghui.viewModels.AuthenticationViewModel
 class AuthenticationActivity : BaseActivity() {
     private lateinit var mBinding: ActivityAuthenticationBinding
     private val mModel = lazy { ViewModelProvider(this)[AuthenticationViewModel::class.java] }
+    private  var uuid=""
+
     override fun getContentView(): View {
         mBinding = ActivityAuthenticationBinding.inflate(layoutInflater)
         return mBinding.root
@@ -32,7 +40,21 @@ class AuthenticationActivity : BaseActivity() {
 
     override fun initViewModel() {
         super.initViewModel()
-        mModel.value.phoneCodeResult.observe(this) {
+        mModel.value.getGraphicCode()
+        mBinding.phoneGraphicCodeSend.setOnclick {
+            mModel.value.getGraphicCode()
+        }
+        mModel.value.graphicCodeResult.observe(this) {
+            //请求手机验证码成功，开始倒计时
+            dismissLoadingDialog()
+            val jsonObject = JSONObject(Gson().toJson(it))
+            uuid = jsonObject.getString("uuid")
+            val img = jsonObject.getString("img")
+            val code = base64ToBitmap(img)
+            mBinding.phoneGraphicCodeSend.setImageBitmap(code)
+        }
+
+        mModel.value.phoneUuidCodeResult.observe(this) {
             //请求手机验证码成功，开始倒计时
             dismissLoadingDialog()
             it?.apply {
@@ -70,7 +92,10 @@ class AuthenticationActivity : BaseActivity() {
             }
         }
     }
-
+    fun base64ToBitmap(base64String: String): Bitmap? {
+        val decodedBytes = Base64.decode(base64String, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    }
     override fun setData(savedInstanceState: Bundle?) {
         setMultipleClick(mBinding.btnBack, mBinding.phoneCodeSend, mBinding.btnSubmit) {
             when (it) {
@@ -86,7 +111,8 @@ class AuthenticationActivity : BaseActivity() {
                         return@setMultipleClick
                     }
                     showLoadingDialog()
-                    mModel.value.requestPhoneCode(phone)
+                    val code = mBinding.phoneGraphicCodeEdt.text.toString().trim()
+                    mModel.value.requestUuidPhoneCode(phone,code,uuid,"")
                 }
 
                 else -> {

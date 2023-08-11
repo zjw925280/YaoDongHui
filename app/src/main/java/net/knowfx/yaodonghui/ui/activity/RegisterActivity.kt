@@ -2,18 +2,24 @@ package net.knowfx.yaodonghui.ui.activity
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
+import android.util.Base64
+import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.databinding.ActivityRegisterBinding
+import net.knowfx.yaodonghui.entities.GraphicCodeData
 import net.knowfx.yaodonghui.ext.checkPwd
 import net.knowfx.yaodonghui.ext.dismissLoadingDialog
 import net.knowfx.yaodonghui.ext.jumpToTarget
@@ -22,13 +28,14 @@ import net.knowfx.yaodonghui.ext.setMultipleClick
 import net.knowfx.yaodonghui.ext.showLoadingDialog
 import net.knowfx.yaodonghui.ext.startCountDownForGetCode
 import net.knowfx.yaodonghui.ext.toast
-import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.LoginRegisterViewModel
+import org.json.JSONObject
 
 
 class RegisterActivity : BaseActivity() {
     private lateinit var mBinding: ActivityRegisterBinding
     private lateinit var mViewModel: LoginRegisterViewModel
+    private  var uuid=""
 
     override fun getContentView(): View {
         mBinding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -39,19 +46,31 @@ class RegisterActivity : BaseActivity() {
     override fun initViewModel() {
         super.initViewModel()
         mViewModel = ViewModelProvider(this)[LoginRegisterViewModel::class.java]
-        mViewModel.phoneCodeResult.observe(this) {
+
+        mViewModel.graphicCodeResult.observe(this) {
+            //请求手机验证码成功，开始倒计时
+            dismissLoadingDialog()
+            val jsonObject = JSONObject(Gson().toJson(it))
+             uuid = jsonObject.getString("uuid")
+            val img = jsonObject.getString("img")
+            val code = base64ToBitmap(img)
+           mBinding.layoutPhoneCheck.btnGetGraphicCode.setImageBitmap(code)
+        }
+        mViewModel.phoneUuidCodeResult.observe(this) {
             //请求手机验证码成功，开始倒计时
             dismissLoadingDialog()
             it?.apply {
                 result(String(), error = { msg ->
                     msg.toast()
                 }, success = {
+
                     mBinding.layoutPhoneCheck.btnGetCode.startCountDownForGetCode()
                 })
             } ?: {
                 "获取手机验证码失败，请稍后重试".toast()
             }
         }
+        mViewModel.getGraphicCode()
 
         mViewModel.registerResult.observe(this) {
             dismissLoadingDialog()
@@ -64,7 +83,10 @@ class RegisterActivity : BaseActivity() {
             }
         }
     }
-
+    fun base64ToBitmap(base64String: String): Bitmap? {
+        val decodedBytes = Base64.decode(base64String, Base64.DEFAULT)
+        return BitmapFactory.decodeByteArray(decodedBytes, 0, decodedBytes.size)
+    }
     private fun initViews() {
         //设置用户协议和隐私策略的可点击逻辑
         val str = getString(R.string.string_login_contract)
@@ -123,9 +145,13 @@ class RegisterActivity : BaseActivity() {
             mBinding.btnBack,
             mBinding.layoutPhoneCheck.btnGetCode,
             mBinding.btnRegister,
-            mBinding.radioContract
+            mBinding.radioContract,
+            mBinding.layoutPhoneCheck.btnGetGraphicCode
         ) {
             when (it) {
+                mBinding.layoutPhoneCheck.btnGetGraphicCode -> {
+                    mViewModel.getGraphicCode()
+                }
                 mBinding.btnBack -> {
                     finish()
                 }
@@ -137,9 +163,10 @@ class RegisterActivity : BaseActivity() {
                         return@setMultipleClick
                     }
                     showLoadingDialog()
-                    mViewModel.requestPhoneCode(
-                        mBinding.layoutPhoneCheck.edtPhone.text.toString().trim()
-                    )
+                    var phone=mBinding.layoutPhoneCheck.edtPhone.text.toString().trim()
+                    var code=mBinding.layoutPhoneCheck.edtGraphicCode.text.toString().trim()
+
+                    mViewModel.requestUuidPhoneCode(phone,code,uuid,"1")
                 }
 
                 mBinding.btnRegister -> {

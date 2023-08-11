@@ -110,6 +110,15 @@
         app:layout_constraintTop_toBottomOf="@+id/idTypeText" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/phoneGraphicCodeText"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_50"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_333333"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idCodeText" />
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/phoneCodeText"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_50"
@@ -119,7 +128,7 @@
         android:textColor="@color/color_333333"
         android:textSize="@dimen/sp_14"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idCodeText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneGraphicCodeText" />
 
     <View
         android:layout_width="match_parent"
@@ -155,6 +164,12 @@
         android:layout_marginHorizontal="@dimen/dp_12"
         android:background="@color/color_F7F7F7"
         app:layout_constraintBottom_toBottomOf="@+id/idCodeText" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_5"
+        android:layout_marginHorizontal="@dimen/dp_12"
+        android:background="@color/color_F7F7F7"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneGraphicCodeEdt" />
 
     <View
         android:layout_width="match_parent"
@@ -249,7 +264,7 @@
         android:id="@+id/idCodeEdt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/dp_23"
+        android:layout_marginStart="@dimen/dp_40"
         android:layout_marginEnd="@dimen/dp_12"
         android:background="@android:color/transparent"
         android:hint="@string/string_hint_id_code"
@@ -258,10 +273,37 @@
         android:textColorHint="@color/color_D8D8D8"
         android:textSize="@dimen/sp_14"
         app:layout_constraintBottom_toBottomOf="@+id/idCodeText"
-        app:layout_constraintLeft_toRightOf="@+id/phoneCodeText"
+        app:layout_constraintLeft_toRightOf="@+id/idCodeText"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/idCodeText" />
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/phoneGraphicCodeEdt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@android:color/transparent"
+        android:hint="@string/string_Graphic_code"
+        android:lines="1"
+        android:textColor="@color/color_333333"
+        android:textColorHint="@color/color_D8D8D8"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneGraphicCodeText"
+        app:layout_constraintLeft_toRightOf="@+id/phoneGraphicCodeText"
+        app:layout_constraintRight_toLeftOf="@+id/phoneCodeSend"
+        app:layout_constraintTop_toTopOf="@+id/phoneGraphicCodeText" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/phoneGraphicCodeSend"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/dp_23"
+        android:layout_marginEnd="@dimen/dp_12"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneGraphicCodeText"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/phoneGraphicCodeText" />
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/phoneCodeEdt"
         android:layout_width="0dp"
@@ -293,7 +335,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/phoneCodeText"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@+id/phoneCodeText" />
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/btnSubmit"
         android:layout_width="match_parent"

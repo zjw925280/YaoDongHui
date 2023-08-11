@@ -17,6 +17,10 @@ import net.knowfx.yaodonghui.utils.ErrorCode
 open class BaseResponse : BaseData() {
     var code = 0
     var msg: String = "解析异常"
+    var captchaEnabled=false
+    var uuid: String = ""
+    var img: String = ""
+
     fun isSuccess(): Boolean{
         return ErrorCode.fromCode(code) == ErrorCode.SUCCESS
     }
