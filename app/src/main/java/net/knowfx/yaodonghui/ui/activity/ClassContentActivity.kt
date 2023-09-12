@@ -1,15 +1,18 @@
 package net.knowfx.yaodonghui.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
+import com.google.gson.Gson
 import com.shuyu.gsyvideoplayer.GSYVideoManager
 import com.shuyu.gsyvideoplayer.builder.GSYVideoOptionBuilder
 import com.shuyu.gsyvideoplayer.listener.GSYSampleCallBack
@@ -36,6 +39,7 @@ import net.knowfx.yaodonghui.ext.share
 import net.knowfx.yaodonghui.ext.showLoadingDialog
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
+import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.ClassViewModel
 
 
@@ -74,6 +78,7 @@ class ClassContentActivity : BaseActivity() {
             it?.apply {
                 result(ClassContentData(), error = { msg -> msg.toast() }, success = { data ->
                     mData = data
+                    Log.e("播放链接","data="+Gson().toJson(data))
                     if (data.follow) {
                         mBinding.btnFocus.isSelected = true
                         mBinding.btnFocus.updateText("已关注")
@@ -95,6 +100,7 @@ class ClassContentActivity : BaseActivity() {
         mModel.value.classComment.observe(this) {
             it?.apply {
                 result(CommentData(), error = { msg -> msg.toast() }, success = { data ->
+                    Log.e("是不是这个数据",""+Gson().toJson(data))
                     data.isFirstPage.trueLet {
                         mCommentAdapter.putData(data.list)
                     }.elseLet {
@@ -146,6 +152,12 @@ class ClassContentActivity : BaseActivity() {
         imageView.into(cover)
         imageView.layoutParams = params
         val gsyVideoOption = GSYVideoOptionBuilder()
+        val replace = url.getVideoUrl().replace("+", "%20")
+        Log.e("播放链接","播放链接="+replace);
+        if (url==null||url.equals("")){
+            ToastUtils.showToast("播放链接错误")
+            return
+        }
         gsyVideoOption
             .setThumbImageView(imageView)
             .setIsTouchWiget(true)
@@ -154,7 +166,7 @@ class ClassContentActivity : BaseActivity() {
             .setAutoFullWithSize(true)
             .setShowFullAnimation(false)
             .setNeedLockFull(false)
-            .setUrl(url.getVideoUrl())
+            .setUrl(replace)
             .setCacheWithPlay(false)
             .setVideoTitle(title)
             .setVideoAllCallBack(object : GSYSampleCallBack() {
@@ -176,14 +188,14 @@ class ClassContentActivity : BaseActivity() {
     }
 
     private fun addListeners() {
-        mBinding.btnBack.setOnclick {
+        mBinding.btnBack.setOnclick {//返回
             onBackPressed()
         }
-        mBinding.videoPlayer.fullscreenButton.setOnclick {
+        mBinding.videoPlayer.fullscreenButton.setOnclick {//获取全屏按键
             mOrientationUtil.resolveByClick()
             mBinding.videoPlayer.startWindowFullscreen(this, true, true)
         }
-        mBinding.commentRv.addOnScrollListener(object : OnScrollListener() {
+        mBinding.commentRv.addOnScrollListener(object : OnScrollListener() {//评论
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 val layoutManager = recyclerView.layoutManager as LinearLayoutManager
@@ -194,7 +206,7 @@ class ClassContentActivity : BaseActivity() {
                 }
             }
         })
-        mBinding.commentEdt.setOnEditorActionListener { _, actionId, _ ->
+        mBinding.commentEdt.setOnEditorActionListener { _, actionId, _ ->//发表评论输入框
             checkIsLogin {
                 (actionId == EditorInfo.IME_ACTION_SEND).trueLet {
                     val content = mBinding.commentEdt.text.toString().trim()
@@ -211,7 +223,7 @@ class ClassContentActivity : BaseActivity() {
             return@setOnEditorActionListener false
         }
 
-        mBinding.btnFocus.setOnclick {
+        mBinding.btnFocus.setOnclick {//公司信息
             commonViewModel.value.focus(
                 model = "JGXT",
                 id = mTargetId,
@@ -219,7 +231,7 @@ class ClassContentActivity : BaseActivity() {
             )
         }
 
-        mBinding.btnShare.setOnclick {
+        mBinding.btnShare.setOnclick {//分享
             //分享
             val data = ShareData(
                 title = mData.title,

@@ -1,12 +1,14 @@
 package net.knowfx.yaodonghui.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.databinding.LayoutSingleListBinding
@@ -48,12 +50,15 @@ class FragmentRankHistory: Fragment() {
         mModel.value.historyList.observe(this) {
             it?.apply {
                 result(FocusBrokerData(), error = { msg -> msg.toast() }, success = { data ->
-                    if (data.isFirstPage) {
-                        mAdapter.putData(data.list)
-                    } else {
-                        mAdapter.addDataListToEnd(dataList = data.list)
-                    }
-                    mBinding.value.refreshLayout.setCanLoadMore(!data.isLastPage)
+                     if (data!=null){
+                         if (data.isFirstPage) {
+                             mAdapter.putData(data.list)
+                         } else {
+                             mAdapter.addDataListToEnd(dataList = data.list)
+                         }
+                         mBinding.value.refreshLayout.setCanLoadMore(!data.isLastPage)
+                     }
+
                 })
             }
         }

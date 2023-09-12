@@ -1,6 +1,7 @@
 package net.knowfx.yaodonghui.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
@@ -96,6 +97,7 @@ class ArticleContentActivity : BaseActivity() {
     override fun setData(savedInstanceState: Bundle?) {
         mTargetId = bundle?.getInt("id", 0) ?: 0
         mFlag = bundle?.getString("flag") ?: ""
+        Log.e("mFlag数据","setData="+mFlag);
         mBinding.windowTitle.text = "${getTextFromModel(mFlag)}详情"
         mBinding.commentLayout.commentRv.layoutManager = LinearLayoutManager(this)
         mBinding.commentLayout.commentRv.addItemDecoration(CommonMarginDecoration(0, 0, 1, false))
@@ -110,6 +112,7 @@ class ArticleContentActivity : BaseActivity() {
     }
 
     private fun addListeners() {
+        Log.e("mFlag数据","addListeners="+mFlag);
         mBinding.commentBar.setListeners(
             onComment = { text ->//提交评论
                 commonViewModel.value.postComment(id = mTargetId, model = mFlag, content = text)
@@ -132,6 +135,7 @@ class ArticleContentActivity : BaseActivity() {
                     ).createShareUrl("ZX"),
                     thumbBitmap = getArticleShareBitmap(mFlag)
                 )
+                 Log.e("mFlag数据","share=="+mFlag)
                 share(scroll = mBinding.scrollLayout, activity = this, data = data)
             })
         mBinding.btnBack.setOnclick {

@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -14,6 +15,10 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.ViewModelProvider
 import com.permissionx.guolindev.PermissionX
 import com.permissionx.guolindev.callback.RequestCallback
+import com.tencent.connect.common.Constants
+import com.tencent.tauth.IUiListener
+import com.tencent.tauth.Tencent
+import com.tencent.tauth.UiError
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.entities.ShareData
 import net.knowfx.yaodonghui.ext.KEY_TOKEN
@@ -211,5 +216,34 @@ abstract class BaseActivity : AppCompatActivity() {
 
     protected fun delAccount() {
         commonViewModel.value.delAccount()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        // 以下代码算是固定写法，复制即可
+        if (requestCode == Constants.REQUEST_QQ_SHARE){
+            Tencent.onActivityResultData(requestCode, resultCode, data, object : IUiListener {
+                override fun onComplete(p0: Any?) {
+                    // 分享成功
+                    ToastUtils.showToast("分享成功")
+                }
+
+                override fun onError(p0: UiError?) {
+                    // 分享失败
+                    ToastUtils.showToast("分享失败")
+
+                }
+
+                override fun onCancel() {
+                    // 分享取消
+                    ToastUtils.showToast("分享取消")
+                }
+
+                override fun onWarning(p0: Int) {
+                    Log.e("为啥子来这","为啥子来这");
+                }
+
+            })
+        }
     }
 }

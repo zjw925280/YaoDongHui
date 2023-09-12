@@ -178,7 +178,8 @@ fun LayoutCommentBarBinding.setListeners(
     commentCountLayout.setOnclick { seeAll?.invoke() }
     btnFocus.setOnclick { MyApplication.getLastActivity().checkIsLogin { focus?.invoke() } }
     btnShare.setOnclick {
-        MyApplication.getLastActivity().checkIsLogin { share?.invoke() }
+        share?.invoke()
+//        MyApplication.getLastActivity().checkIsLogin {  }
     }
 }
 
