@@ -10,9 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.databinding.LayoutSingleListBinding
-import net.knowfx.yaodonghui.entities.BrokerContentData
-import net.knowfx.yaodonghui.entities.BrokerData
-import net.knowfx.yaodonghui.entities.BrokerListData
 import net.knowfx.yaodonghui.entities.FocusBrokerData
 import net.knowfx.yaodonghui.ext.bindController
 import net.knowfx.yaodonghui.ext.getController

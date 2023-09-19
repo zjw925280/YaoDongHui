@@ -7,14 +7,18 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.ViewModelProvider
 import coil.Coil
 import coil.annotation.ExperimentalCoilApi
+import com.tencent.mmkv.MMKV
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.databinding.ActivitySettingBinding
 import net.knowfx.yaodonghui.ext.setMultipleClick
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.entities.UserInfoData
 import net.knowfx.yaodonghui.ext.checkIsLogin
+import net.knowfx.yaodonghui.ext.clearApplicationCache
 import net.knowfx.yaodonghui.ext.clearCacheKeys
 import net.knowfx.yaodonghui.ext.dismissLoadingDialog
+import net.knowfx.yaodonghui.ext.getApplicationCacheSize
+import net.knowfx.yaodonghui.ext.getMMKVSize
 import net.knowfx.yaodonghui.ext.getUserData
 import net.knowfx.yaodonghui.ext.intoCircle
 import net.knowfx.yaodonghui.ext.jumpToTargetForResult
@@ -50,6 +54,8 @@ class SettingActivity : BaseActivity() {
     override fun getContentView(): View {
         mViewBinding = ActivitySettingBinding.inflate(layoutInflater)
         addListeners()
+        mViewBinding.labelClearCacheTv.text=getApplicationCacheSize(this)
+
         return mViewBinding.root
     }
 
@@ -70,6 +76,8 @@ class SettingActivity : BaseActivity() {
         userInfo?.apply {
             showUserInfo(this)
         }
+
+
     }
 
     private fun showUserInfo(data: UserInfoData) {
@@ -91,7 +99,7 @@ class SettingActivity : BaseActivity() {
             mViewBinding.radioMan,
             mViewBinding.radioWoman,
             mViewBinding.labelModifyPwd,
-            mViewBinding.labelClearCache,
+            mViewBinding.relayoutche,
             mViewBinding.btnDestroy,
             mViewBinding.btnLogout,
             mViewBinding.labelIdentity
@@ -140,11 +148,13 @@ class SettingActivity : BaseActivity() {
                     startActivity(Intent(this, ModifyPwdActivity::class.java))
                 }
 
-                mViewBinding.labelClearCache -> {
+                mViewBinding.relayoutche -> {
+
                     //清除缓存
-                    clearCacheKeys()
+                    clearApplicationCache(this)
                     Coil.imageLoader(MyApplication.getInstance()).diskCache?.clear()
                     "缓存清除成功".toast()
+                    mViewBinding.labelClearCacheTv.text="0KB"
                 }
 
                 mViewBinding.btnDestroy -> {

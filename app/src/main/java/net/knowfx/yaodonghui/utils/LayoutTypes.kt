@@ -93,16 +93,20 @@ object LayoutTypes {
     const val TYPE_SUPERVISE_DEALER = BASE_TYPE_LAYOUT + 36
     const val TYPE_FOCUS_DEALER = BASE_TYPE_LAYOUT + 37
     const val TYPE_FOCUS_ARTICLE = BASE_TYPE_LAYOUT + 38
+
+//    推送历史
     const val TYPE_PUSH_LIST = BASE_TYPE_LAYOUT + 39
     const val TYPE_MSG_LIST = BASE_TYPE_LAYOUT + 40
 
     //无数据item
     const val TYPE_LAYOUT_EMPTY = BASE_TYPE_LAYOUT + 50
+    const val IMAGE_ITEM = BASE_TYPE_LAYOUT + 51
 
     /**
      * 通过item的类型获取对应的item布局的Map
      */
     val LAYOUT_MAP: HashMap<Int, Int> = hashMapOf(
+        Pair(IMAGE_ITEM, R.layout.layout_image_item),
         Pair(TYPE_INDEX_FUNCTION, R.layout.layout_inner_rv),
         Pair(TYPE_INDEX_FUNCTION_ITEM, R.layout.layout_item_index_function),
         Pair(TYPE_INDEX_BANNER, R.layout.layout_index_banner),

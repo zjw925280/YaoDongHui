@@ -17,7 +17,6 @@ import net.knowfx.yaodonghui.ext.bindController
 import net.knowfx.yaodonghui.ext.createShareUrl
 import net.knowfx.yaodonghui.ext.falseLet
 import net.knowfx.yaodonghui.ext.getArticleShareBitmap
-import net.knowfx.yaodonghui.ext.getByteArray
 import net.knowfx.yaodonghui.ext.getController
 import net.knowfx.yaodonghui.ext.getCreateFormatTime
 import net.knowfx.yaodonghui.ext.getTextFromModel

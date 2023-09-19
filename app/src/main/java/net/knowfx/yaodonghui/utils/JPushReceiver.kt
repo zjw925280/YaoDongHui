@@ -2,7 +2,6 @@ package net.knowfx.yaodonghui.utils
 
 import android.content.Context
 import cn.jpush.android.api.CmdMessage
-import cn.jpush.android.api.CustomMessage
 import cn.jpush.android.api.JPushInterface
 import cn.jpush.android.api.NotificationMessage
 import cn.jpush.android.service.JPushMessageReceiver
@@ -10,7 +9,6 @@ import net.knowfx.yaodonghui.ext.getUserData
 import net.knowfx.yaodonghui.ext.jumpFromPush
 import net.knowfx.yaodonghui.ext.jumpToTarget
 import net.knowfx.yaodonghui.ext.logE
-import net.knowfx.yaodonghui.ext.showNotification
 import net.knowfx.yaodonghui.ui.activity.WebActivity
 import org.json.JSONObject
 import kotlin.random.Random

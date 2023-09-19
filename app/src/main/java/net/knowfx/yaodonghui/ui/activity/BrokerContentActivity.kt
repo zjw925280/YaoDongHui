@@ -1,8 +1,6 @@
 package net.knowfx.yaodonghui.ui.activity
 
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -11,12 +9,6 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.bumptech.glide.TransitionOptions
-import com.bumptech.glide.load.Transformation
-import com.bumptech.glide.request.RequestOptions
-import com.bumptech.glide.request.target.CustomTarget
-import com.bumptech.glide.request.target.SimpleTarget
-import com.bumptech.glide.request.transition.Transition
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -56,7 +48,6 @@ import net.knowfx.yaodonghui.ext.visible
 import net.knowfx.yaodonghui.ui.dialogs.DialogBottomList
 import net.knowfx.yaodonghui.ui.dialogs.DialogHelpNotification
 import net.knowfx.yaodonghui.ui.dialogs.DialogPlatformHelp
-import net.knowfx.yaodonghui.ui.dialogs.DialogWebSet
 import net.knowfx.yaodonghui.ui.views.AutoScrollRecyclerView
 import net.knowfx.yaodonghui.utils.ToastUtils
 import net.knowfx.yaodonghui.viewModels.DealerViewModel

@@ -26,6 +26,8 @@ class UserInfoData : BaseData() {
     var surname = ""
     /**名字*/
     var name = ""
+    /**手机号码*/
+    var userId = ""
 
     fun isEmpty(): Boolean {
         return id == 0 && userhead.isEmpty() && nickname.isEmpty()

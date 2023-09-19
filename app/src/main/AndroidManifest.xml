@@ -49,9 +49,14 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.Imagectivity"
+            android:exported="false"
+            android:theme="@style/FullScreenTheme"
+            />
+        <activity
             android:name=".ui.activity.ArticleCommentContentActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.WebActivity"
             android:exported="false"
@@ -59,11 +64,11 @@
         <activity
             android:name=".ui.activity.WatchExploreActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.WatchBrokerActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ScreenCaptureActivity"
             android:exported="false"
@@ -75,11 +80,11 @@
         <activity
             android:name=".ui.activity.ContractActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ExploreCommentContentActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ClassSearchActivity"
             android:exported="false"
@@ -87,27 +92,28 @@
         <activity
             android:name=".ui.activity.MessageActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.MessageHistoryActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.PushHistoryActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.FeedbackActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.activity.WatchHistoryActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.SuperviseDealerSearchActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.DrawSearchActivity"
             android:exported="false"
@@ -119,23 +125,23 @@
         <activity
             android:name=".ui.activity.ProfileActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.VersionActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.BrandEventActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.FunctionAllActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.FindPwdActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:exported="false"
@@ -148,23 +154,23 @@
         <activity
             android:name=".ui.activity.SuperviseContentActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.SuperviseInfoActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.LegalAidActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.AuthenticationActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.CommentExplorePostActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.BrokerContentActivity"
             android:exported="false"
@@ -172,27 +178,27 @@
         <activity
             android:name=".ui.activity.ArticleContentActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ArticleListActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.DrawContentActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.DrawListActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ClassContentActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.activity.ClassListActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.BrokerSearchActivity"
             android:exported="false"
@@ -200,35 +206,35 @@
         <activity
             android:name=".ui.activity.BusinessWorkActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.MyWatchHistoryActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.MyFocusActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.MyPostHistoryActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.AboutActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.ModifyPwdActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.SettingActivity"
             android:exported="false"
-            android:screenOrientation="nosensor"/>
+            android:screenOrientation="nosensor" />
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="false"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
             android:launchMode="singleTask" />
         <activity
             android:name=".ui.activity.SplashActivity"
@@ -248,7 +254,9 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="wx94da845a0957886d" />
             </intent-filter>
         </activity>
@@ -265,13 +273,15 @@
 
         <activity
             android:name="com.tencent.tauth.AuthActivity"
-            android:noHistory="true"
+            android:exported="true"
             android:launchMode="singleTask"
-            android:exported="true">
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="tencent102067312" />
             </intent-filter>
         </activity>

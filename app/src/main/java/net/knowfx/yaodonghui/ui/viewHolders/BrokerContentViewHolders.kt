@@ -1,5 +1,6 @@
 package net.knowfx.yaodonghui.ui.viewHolders
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import net.knowfx.yaodonghui.R
@@ -11,6 +12,7 @@ import net.knowfx.yaodonghui.base.BaseListData
 import net.knowfx.yaodonghui.entities.BrokerContentData
 import net.knowfx.yaodonghui.entities.IndexPagerData
 import net.knowfx.yaodonghui.ext.getCreateFormatTime
+import net.knowfx.yaodonghui.ext.getTextFromColorModel
 import net.knowfx.yaodonghui.ext.getTextFromModel
 import net.knowfx.yaodonghui.ext.intoCircle
 import net.knowfx.yaodonghui.ext.intoCorners
@@ -91,6 +93,7 @@ object BrokerContentViewHolders {
                 data.coverPicture,
                 itemView.resources.getDimension(R.dimen.dp_5)
             )
+
             //根据 [data.type] 修改标识的背景颜色，文字
             binding.labelTv.text = getTextFromModel(model = data.flag)
             itemView.setOnclick { onItemClicked?.invoke(it, data, position) }

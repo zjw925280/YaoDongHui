@@ -1,5 +1,6 @@
 package net.knowfx.yaodonghui.ui.viewHolders
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import net.knowfx.yaodonghui.R
@@ -25,6 +26,7 @@ class ExploreListHolder(parent: ViewGroup, resId: Int) : BaseViewHolder(parent, 
         val corner = itemView.resources.getDimensionPixelOffset(R.dimen.dp_5)
         val height = itemView.resources.getDimensionPixelOffset(R.dimen.dp_80)
         binding.thumbIv.intoLogoOrCover(data.exposurefile, height, corner)
+
         binding.logoIv.intoCorners(
             data.logo,
             itemView.resources.getDimensionPixelOffset(R.dimen.dp_2).toFloat()

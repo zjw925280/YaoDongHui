@@ -1,7 +1,9 @@
 package net.knowfx.yaodonghui.ext
 
+import android.content.Context
 import android.os.Parcelable
 import com.tencent.mmkv.MMKV
+import java.io.File
 
 const val KEY_TOKEN = "token"
 const val KEY_USER_INFO = "userInfo"
@@ -127,9 +129,108 @@ fun clearCacheKeys() {
         }
     }
 }
+fun getMMKVSize(mmkv: MMKV?): Long {
+    var size = 0L
+    mmkv?.run {
+        val keys = allKeys()
+        if (keys != null) {
+            for (key in keys) {
+                if (!key.startsWith("_")) {
+                    val value = decodeString(key, null)
+                    if (value != null) {
+                        size += key.toByteArray(Charsets.UTF_8).size.toLong() +
+                                value.toByteArray(Charsets.UTF_8).size.toLong()
+                    }
+                }
+            }
+        }
+    }
 
+    return size
+}
 fun clearAllMMKV() {
     MMKV.mmkvWithID("app")?.clearAll()
+}
+
+
+fun getApplicationCacheSize(context: Context): String {
+    var totalSize = 0L
+
+    // 获取应用的缓存目录
+    val cacheDirs = arrayOf(
+        context.cacheDir,                   // 内部缓存目录
+        context.externalCacheDir            // 外部缓存目录
+    )
+
+    for (cacheDir in cacheDirs) {
+        if (cacheDir != null) {
+            totalSize += calculateDirectorySize(cacheDir)
+        }
+    }
+
+    return formatSize(totalSize)
+}
+
+fun calculateDirectorySize(directory: File): Long {
+    var directorySize = 0L
+
+    if (directory.exists()) {
+        val files = directory.listFiles()
+
+        if (files != null) {
+            for (file in files) {
+                if (file.isDirectory) {
+                    directorySize += calculateDirectorySize(file)
+                } else {
+                    directorySize += file.length()
+                }
+            }
+        }
+    }
+
+    return directorySize
+}
+
+fun clearApplicationCache(context: Context) {
+    // 获取应用的缓存目录
+    val cacheDirs = arrayOf(
+        context.cacheDir,                   // 内部缓存目录
+        context.externalCacheDir            // 外部缓存目录
+    )
+
+    for (cacheDir in cacheDirs) {
+        if (cacheDir != null) {
+            clearDirectory(cacheDir)
+        }
+    }
+}
+
+fun clearDirectory(directory: File) {
+    if (directory.exists()) {
+        val files = directory.listFiles()
+
+        if (files != null) {
+            for (file in files) {
+                if (file.isDirectory) {
+                    clearDirectory(file)
+                } else {
+                    file.delete()
+                }
+            }
+        }
+    }
+}
+
+fun formatSize(size: Long): String {
+    val kb = size / 1024
+    val mb = kb / 1024
+    val gb = mb / 1024
+    return when {
+        gb > 1 -> "${gb}GB"
+        mb > 1 -> "${mb}MB"
+        kb > 1 -> "${kb}KB"
+        else -> "${size}B"
+    }
 }
 
 /**

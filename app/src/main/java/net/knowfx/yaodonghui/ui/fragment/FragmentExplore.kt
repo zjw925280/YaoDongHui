@@ -1,6 +1,7 @@
 package net.knowfx.yaodonghui.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +15,6 @@ import net.knowfx.yaodonghui.entities.BottomPopData
 import net.knowfx.yaodonghui.entities.ExploreTypeData
 import net.knowfx.yaodonghui.ext.checkIsLogin
 import net.knowfx.yaodonghui.ext.jumpToTarget
-import net.knowfx.yaodonghui.ext.setOnclick
 import net.knowfx.yaodonghui.ui.activity.CommentExplorePostActivity
 import net.knowfx.yaodonghui.ui.activity.ExploreSearchActivity
 import net.knowfx.yaodonghui.ui.dialogs.DialogBottomList
@@ -95,11 +95,14 @@ class FragmentExplore : Fragment() {
         list.forEach {
             mFragments.add(FragmentExploreList(it.type))
         }
+        mViewBinding.exploreVp.offscreenPageLimit = 1
+        Log.e("啥呀","list="+list.size+" mFragments="+mFragments.size)
         mViewBinding.exploreVp.adapter = MyVpAdapter(activity as BaseActivity)
         val tabLayoutMediator = TabLayoutMediator(
             mViewBinding.exploreTabs, mViewBinding.exploreVp
         ) { tab, position ->
             tab.text = list[position].title
+
         }
         tabLayoutMediator.attach()
     }
@@ -113,9 +116,13 @@ class FragmentExplore : Fragment() {
         }
 
         override fun createFragment(position: Int): Fragment {
+            Log.e("啥呀", "啥呀 $position")
+
             return if (position > mFragments.size - 1) {
+                Log.e("啥呀", "进来了 $position")
                 mFragments[mFragments.size - 1]
             } else {
+                Log.e("啥呀", "不是的 $position")
                 mFragments[position]
             }
         }

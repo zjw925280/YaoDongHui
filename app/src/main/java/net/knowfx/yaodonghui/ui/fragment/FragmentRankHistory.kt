@@ -1,14 +1,12 @@
 package net.knowfx.yaodonghui.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.databinding.LayoutSingleListBinding

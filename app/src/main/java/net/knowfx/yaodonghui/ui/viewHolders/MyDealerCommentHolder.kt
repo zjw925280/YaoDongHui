@@ -1,5 +1,6 @@
 package net.knowfx.yaodonghui.ui.viewHolders
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import net.knowfx.yaodonghui.R
@@ -20,6 +21,9 @@ class MyDealerCommentHolder(parent: ViewGroup, layoutId: Int): BaseViewHolder(pa
         val binding = LayoutItemMyPostBinding.bind(itemView)
         val corner = itemView.resources.getDimensionPixelOffset(R.dimen.dp_5)
         binding.thumbIv.intoCorners(url = data.photo, radius = corner.toFloat())
+        binding.thumbIv.setOnClickListener {
+            Log.e("点击了","点击了");
+        }
         binding.titleTv.text = data.title
         binding.contentTv.text = data.content
         binding.labelTv.gone()

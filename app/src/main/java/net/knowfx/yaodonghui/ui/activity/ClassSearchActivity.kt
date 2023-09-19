@@ -2,7 +2,6 @@ package net.knowfx.yaodonghui.ui.activity
 
 import android.os.Bundle
 import android.view.KeyEvent
-import android.view.View
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +15,6 @@ import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.databinding.ActivityArticleSearchBinding
 import net.knowfx.yaodonghui.databinding.LayoutItemSearchHistoryBinding
 import net.knowfx.yaodonghui.entities.ClassListData
-import net.knowfx.yaodonghui.entities.DrawCircleListData
 import net.knowfx.yaodonghui.ext.bindController
 import net.knowfx.yaodonghui.ext.delSingleCache
 import net.knowfx.yaodonghui.ext.getController
@@ -31,7 +29,6 @@ import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
 import net.knowfx.yaodonghui.ext.visible
 import net.knowfx.yaodonghui.utils.inputShowHide
-import net.knowfx.yaodonghui.viewModels.ArticleViewModel
 import net.knowfx.yaodonghui.viewModels.ClassViewModel
 
 class ClassSearchActivity: BaseActivity() {

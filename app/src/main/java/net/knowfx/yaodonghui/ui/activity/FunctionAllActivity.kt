@@ -1,6 +1,5 @@
 package net.knowfx.yaodonghui.ui.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
@@ -12,7 +11,6 @@ import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.base.BaseListData
 import net.knowfx.yaodonghui.databinding.ActivityFunctionAllBinding
 import net.knowfx.yaodonghui.entities.AllFunctionList
-import net.knowfx.yaodonghui.entities.CommonTitleData
 import net.knowfx.yaodonghui.entities.IndexFunctionListData
 import net.knowfx.yaodonghui.ext.indexFunctionJump
 import net.knowfx.yaodonghui.ext.jumpToTarget
@@ -22,7 +20,6 @@ import net.knowfx.yaodonghui.ext.setOnclick
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
 import net.knowfx.yaodonghui.utils.CommonMarginDecoration
-import net.knowfx.yaodonghui.utils.LayoutTypes
 import net.knowfx.yaodonghui.viewModels.IndexViewModel
 
 class FunctionAllActivity : BaseActivity() {

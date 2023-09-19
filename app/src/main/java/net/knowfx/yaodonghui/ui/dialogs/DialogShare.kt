@@ -82,7 +82,7 @@ class DialogShare(private val isActivePic: Boolean = true) :
                 }
 
                 mBinding.layoutSavePic -> {
-                    //保存图片啦
+//                    保存图片啦
                     if (mShareData.isMine) {
                         (requireActivity() as BaseActivity).showCenterDialog(
                             DialogAppShare(
@@ -100,6 +100,8 @@ class DialogShare(private val isActivePic: Boolean = true) :
                         )
                     }
                     dismissAllowingStateLoss()
+//                    mview?.let { it1 -> takeScreenshotAndSaveToGallery(it1,System.currentTimeMillis().toString()) }
+
                 }
 
                 else -> {

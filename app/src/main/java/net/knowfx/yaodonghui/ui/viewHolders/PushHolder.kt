@@ -21,7 +21,12 @@ class PushHolder(parent: ViewGroup, layoutId: Int) : BaseViewHolder(parent, layo
         (data as PushData).apply {
             val height = itemView.resources.getDimensionPixelOffset(R.dimen.dp_40)
             val corner = itemView.resources.getDimensionPixelOffset(R.dimen.dp_5)
-            binding.ivThumb.intoLogoOrCover(url = logofile, height = height, corner = corner)
+            if(logofile!=null&&!logofile.equals("")){
+                binding.ivThumb.intoLogoOrCover(url = logofile, height = height, corner = corner)
+            }else{
+                binding.ivThumb.gone()
+            }
+
             binding.textTitle.text = title
             binding.textContent.text = content
             if (isShowDate) {

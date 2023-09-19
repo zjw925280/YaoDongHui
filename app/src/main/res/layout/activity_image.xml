@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.activity.Imagectivity">
+    <ImageView
+        android:id="@+id/balc"
+        android:layout_marginLeft="15dp"
+        android:padding="10dp"
+        android:src="@mipmap/btn_back_w"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/relayout"
+        android:layout_below="@+id/balc"
+        />
+
+    <RelativeLayout
+    android:layout_marginLeft="70dp"
+    android:layout_marginRight="70dp"
+    android:id="@+id/relayout"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="40dp">
+    <ImageView
+        android:layout_centerVertical="true"
+        android:padding="5dp"
+        android:src="@mipmap/you"
+        android:layout_alignParentLeft="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:text="3/4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:padding="5dp"
+        android:src="@mipmap/zuo"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+
+</RelativeLayout>
+
+</RelativeLayout>

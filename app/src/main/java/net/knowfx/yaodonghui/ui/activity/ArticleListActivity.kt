@@ -14,7 +14,6 @@ import net.knowfx.yaodonghui.ext.getController
 import net.knowfx.yaodonghui.ext.jumpToTarget
 import net.knowfx.yaodonghui.ext.result
 import net.knowfx.yaodonghui.ext.setCanLoadMore
-import net.knowfx.yaodonghui.ext.setOnclick
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.utils.CommonMarginDecoration
 import net.knowfx.yaodonghui.viewModels.ArticleViewModel

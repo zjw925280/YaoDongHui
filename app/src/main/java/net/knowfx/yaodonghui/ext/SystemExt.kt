@@ -19,7 +19,6 @@ import androidx.core.app.NotificationCompat
 import androidx.fragment.app.FragmentActivity
 import cn.jpush.android.api.CustomMessage
 import com.google.gson.Gson
-import com.google.gson.JsonObject
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.entities.IndexFunctionListData
@@ -40,7 +39,7 @@ import org.json.JSONObject
 import java.io.Serializable
 
 fun <T : BaseActivity> jumpToTarget(
-    startAct: FragmentActivity, target: Class<T>, params: HashMap<String, Any> = HashMap()
+    startAct: Context, target: Class<T>, params: HashMap<String, Any> = HashMap()
 ) {
     val intent = Intent(startAct, target)
     params.isNotEmpty().trueLet {

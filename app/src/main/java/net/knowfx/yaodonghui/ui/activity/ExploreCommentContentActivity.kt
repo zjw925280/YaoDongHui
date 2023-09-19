@@ -7,17 +7,16 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import net.knowfx.yaodonghui.R
-import net.knowfx.yaodonghui.adapters.CommonListAdapter
+import net.knowfx.yaodonghui.adapters.ImageAdapter
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.databinding.ActivityExploreCommentBinding
 import net.knowfx.yaodonghui.entities.BottomPopData
 import net.knowfx.yaodonghui.entities.ExploreCommentContentData
-import net.knowfx.yaodonghui.entities.PicData
+import net.knowfx.yaodonghui.entities.ImageData
 import net.knowfx.yaodonghui.entities.ShareData
 import net.knowfx.yaodonghui.ext.checkIsLogin
 import net.knowfx.yaodonghui.ext.createShareUrl
 import net.knowfx.yaodonghui.ext.dismissLoadingDialog
-import net.knowfx.yaodonghui.ext.getByteArray
 import net.knowfx.yaodonghui.ext.getCreateFormatTime
 import net.knowfx.yaodonghui.ext.getExploreCommentBitmap
 import net.knowfx.yaodonghui.ext.getLabelStr
@@ -44,7 +43,9 @@ class ExploreCommentContentActivity : BaseActivity() {
     }
 
     private lateinit var mBinding: ActivityExploreCommentBinding
-    private val mPicAdapter = CommonListAdapter<PicData>()
+    private val mPicAdapter = ImageAdapter<ImageData>(this)
+
+
     private var mTargetId = 0
     private var mIsSelf = false
     private var mLayoutType = LAYOUT_TYPE_EXPLORE
@@ -163,9 +164,9 @@ class ExploreCommentContentActivity : BaseActivity() {
         mBinding.layoutDealer.brokerRankIcon.gone()
         mBinding.layoutDealer.brokerRankText.gone()
         mBinding.layoutDealer.brokerWatch.gone()
-        val picList = ArrayList<PicData>()
+        val picList = ArrayList<ImageData>()
         data.files.forEach {
-            val bean = PicData()
+            val bean = ImageData()
             bean.picServicePath = it
             picList.add(bean)
         }

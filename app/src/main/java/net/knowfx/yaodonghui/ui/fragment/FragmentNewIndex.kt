@@ -1,6 +1,5 @@
 package net.knowfx.yaodonghui.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -33,9 +32,7 @@ import net.knowfx.yaodonghui.ext.indexFunctionJump
 import net.knowfx.yaodonghui.ext.jumpFromPush
 import net.knowfx.yaodonghui.ext.jumpToTarget
 import net.knowfx.yaodonghui.ext.result
-import net.knowfx.yaodonghui.ext.setCanLoadMore
 import net.knowfx.yaodonghui.ext.setOnclick
-import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
 import net.knowfx.yaodonghui.ext.unBindController
 import net.knowfx.yaodonghui.ext.visible
@@ -45,9 +42,7 @@ import net.knowfx.yaodonghui.ui.activity.MessageActivity
 import net.knowfx.yaodonghui.ui.activity.WatchHistoryActivity
 import net.knowfx.yaodonghui.ui.activity.WebActivity
 import net.knowfx.yaodonghui.utils.CommonMarginDecoration
-import net.knowfx.yaodonghui.utils.MyApplication
 import net.knowfx.yaodonghui.viewModels.IndexViewModel
-import kotlin.math.min
 
 class FragmentNewIndex : Fragment() {
     private val mBinding = lazy { FragmentNewIndexBinding.inflate(layoutInflater) }

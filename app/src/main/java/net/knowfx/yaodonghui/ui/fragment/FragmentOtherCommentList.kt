@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.ActivityResultLauncher
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +17,6 @@ import net.knowfx.yaodonghui.entities.MyOtherCommentData
 import net.knowfx.yaodonghui.ext.bindController
 import net.knowfx.yaodonghui.ext.getController
 import net.knowfx.yaodonghui.ext.jumpToTarget
-import net.knowfx.yaodonghui.ext.registerLauncher
 import net.knowfx.yaodonghui.ext.result
 import net.knowfx.yaodonghui.ext.setCanLoadMore
 import net.knowfx.yaodonghui.ext.toast

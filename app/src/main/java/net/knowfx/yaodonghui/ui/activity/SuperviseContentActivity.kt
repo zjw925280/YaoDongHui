@@ -9,27 +9,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.databinding.ActivitySuperviseContentBinding
-import net.knowfx.yaodonghui.entities.BrokerListData
 import net.knowfx.yaodonghui.ext.setMultipleClick
 import net.knowfx.yaodonghui.ext.trueLet
 import net.knowfx.yaodonghui.base.BaseActivity
-import net.knowfx.yaodonghui.entities.BrokerData
 import net.knowfx.yaodonghui.entities.ItemData
 import net.knowfx.yaodonghui.entities.SupBrokerData
 import net.knowfx.yaodonghui.entities.SuperviseProfileData
 import net.knowfx.yaodonghui.ext.bindController
-import net.knowfx.yaodonghui.ext.formatTime
 import net.knowfx.yaodonghui.ext.getController
-import net.knowfx.yaodonghui.ext.gone
-import net.knowfx.yaodonghui.ext.intoCorners
 import net.knowfx.yaodonghui.ext.intoLogoOrCover
-import net.knowfx.yaodonghui.ext.intoWithSize
 import net.knowfx.yaodonghui.ext.jumpToTarget
 import net.knowfx.yaodonghui.ext.result
 import net.knowfx.yaodonghui.ext.setCanLoadMore
 import net.knowfx.yaodonghui.ext.toast
-import net.knowfx.yaodonghui.ext.visible
-import net.knowfx.yaodonghui.ui.viewHolders.SupBrokerHolder
 import net.knowfx.yaodonghui.viewModels.SuperviseViewModel
 
 class SuperviseContentActivity : BaseActivity() {

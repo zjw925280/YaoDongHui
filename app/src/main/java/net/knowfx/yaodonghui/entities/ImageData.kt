@@ -6,25 +6,13 @@ import net.knowfx.yaodonghui.base.BaseListData
 import net.knowfx.yaodonghui.utils.LayoutTypes
 import java.io.File
 
-class PicData : BaseListData {
-    constructor(context: Context) : super(LayoutTypes.IMAGE_ITEM)
-    constructor() : super(LayoutTypes.TYPE_PIC_GRID)
-
-    constructor(imagePath: String, type: String) : super(LayoutTypes.TYPE_PIC_GRID) {
-        cropUrl = imagePath
-        mimeType = type
-    }
-
-    constructor(uri: Uri, path: String, type: String) : super(LayoutTypes.TYPE_PIC_GRID) {
-        this.uri = uri
-        picLocalPath = path
-        mimeType = type
-    }
+class ImageData : BaseListData {
+    constructor() : super(LayoutTypes.IMAGE_ITEM)
 
     var picLocalPath = ""
     var picServicePath = ""
     var cropUrl = ""
-    var uri = Uri.parse("")
+    var uri =""
     var durationFormat = ""
     var mimeType = ""
 

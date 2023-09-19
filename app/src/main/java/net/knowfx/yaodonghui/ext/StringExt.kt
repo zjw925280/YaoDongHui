@@ -6,6 +6,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.widget.TextView
 import net.knowfx.yaodonghui.BuildConfig
+import net.knowfx.yaodonghui.R
 import java.net.URLEncoder
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -21,9 +22,9 @@ fun Long.getCreateFormatTime(): String {
     val array = this.formatTime("yyyy|MM|dd").split("|")
     return if (arrayCur[0] == array[0]) {
         if (arrayCur[1] == array[1] && arrayCur[2] == array[2]) {
-            this@getCreateFormatTime.formatTime("HH:mm")
+            this@getCreateFormatTime.formatTime("yyyy-MM-dd HH:mm")
         } else {
-            this@getCreateFormatTime.formatTime("MM-dd HH:mm")
+            this@getCreateFormatTime.formatTime("yyyy-MM-dd HH:mm")
         }
     } else {
         this@getCreateFormatTime.formatTime()
@@ -51,7 +52,19 @@ fun getTextFromModel(model: String): String {
         else -> "未知"
     }
 }
-
+fun getTextFromColorModel(model1: String): Int {
+    return when (model1) {
+        "ZXH" -> R.drawable.zuixin01
+        "HQST" -> R.drawable.zuixin02
+        "DSPH" -> R.drawable.zuixin03
+        "ZXZX" ->R.drawable.zuixin04
+        "JYSZX" -> R.drawable.zuixin05
+        "HHQ" -> R.drawable.zuixin06
+        "JGXT" ->R.drawable.zuixin07
+        "JYS" -> R.drawable.zuixin05
+        else -> R.drawable.shape_bg_e76e32_2
+    }
+}
 fun ArrayList<String>?.getLabelStr(): String {
     this?.apply {
         return getSplitString("|")

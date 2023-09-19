@@ -1,5 +1,6 @@
 package net.knowfx.yaodonghui.ui.viewHolders
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import net.knowfx.yaodonghui.R
@@ -22,6 +23,8 @@ class MyExploreHolder(parent: ViewGroup, layoutId: Int) : BaseViewHolder(parent,
         val corner = itemView.resources.getDimensionPixelOffset(R.dimen.dp_5)
         val height = itemView.resources.getDimensionPixelOffset(R.dimen.dp_80)
         binding.thumbIv.intoLogoOrCover(url = data.exposurefile, height = height, corner = corner)
+
+
         binding.titleTv.text = data.title
         binding.contentTv.text = data.content
         binding.labelTv.text = data.typeName

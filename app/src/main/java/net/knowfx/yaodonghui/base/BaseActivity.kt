@@ -1,6 +1,5 @@
 package net.knowfx.yaodonghui.base
 
-import android.Manifest
 import android.app.ActivityManager
 import android.content.Context
 import android.content.Intent
@@ -13,8 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.ViewModelProvider
-import com.permissionx.guolindev.PermissionX
-import com.permissionx.guolindev.callback.RequestCallback
 import com.tencent.connect.common.Constants
 import com.tencent.tauth.IUiListener
 import com.tencent.tauth.Tencent
@@ -246,4 +243,5 @@ abstract class BaseActivity : AppCompatActivity() {
             })
         }
     }
+
 }

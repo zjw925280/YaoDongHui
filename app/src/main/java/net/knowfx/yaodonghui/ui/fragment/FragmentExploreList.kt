@@ -1,12 +1,14 @@
 package net.knowfx.yaodonghui.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.databinding.LayoutSingleListBinding
 import net.knowfx.yaodonghui.entities.ExploreListData
@@ -46,6 +48,7 @@ class FragmentExploreList(private val type: ExploreTypeEnum = ExploreTypeEnum.TY
     ): View {
         mViewBinding = LayoutSingleListBinding.inflate(inflater)
         initViews()
+        Log.e("刷新了","刷新了")
         initObservers()
         return mViewBinding.root
     }
@@ -73,6 +76,7 @@ class FragmentExploreList(private val type: ExploreTypeEnum = ExploreTypeEnum.TY
                         mAdapter.addDataListToEnd(dataList = data.list)
                     }
                     mViewBinding.refreshLayout.setCanLoadMore(!data.isLastPage)
+                    Log.e("刷新了","刷新了"+ Gson().toJson(data))
                 })
             }
         }

@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
+import android.util.Log
 import android.view.View
 import android.view.View.FOCUS_UP
 import android.view.Window
@@ -236,6 +237,7 @@ fun share(
 }
 
 private fun Bitmap.saveImageToGallery(context: Context, path: String) {
+    Log.e("来了几次","saveImageToGallery")
     // 首先保存图片
     val file = File(path)
     val appDir = file.parentFile
@@ -269,6 +271,7 @@ private fun Bitmap.saveImageToGallery(context: Context, path: String) {
             Uri.parse("file://$path")
         )
     )
+    Log.e("来了几次","通知")
 }
 
 fun callShare(activity: BaseActivity, data: ShareData, scroll: NestedScrollView? = null, activeSavePic: Boolean) {
@@ -332,6 +335,7 @@ fun saveTemp(bm: Bitmap): String {
 }
 
 fun saveBitmap(bm: Bitmap, targetPath: String, name: String) {
+    Log.e("来了几次","saveBitmap")
     val pathFile = File(targetPath)
     val file = File("${targetPath}${name}")
     //判断指定文件夹的路径是否存在

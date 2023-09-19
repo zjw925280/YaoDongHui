@@ -11,7 +11,6 @@ import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
 import android.util.Base64
-import android.util.Log
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -19,7 +18,6 @@ import com.google.gson.Gson
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.databinding.ActivityRegisterBinding
-import net.knowfx.yaodonghui.entities.GraphicCodeData
 import net.knowfx.yaodonghui.ext.checkPwd
 import net.knowfx.yaodonghui.ext.dismissLoadingDialog
 import net.knowfx.yaodonghui.ext.jumpToTarget

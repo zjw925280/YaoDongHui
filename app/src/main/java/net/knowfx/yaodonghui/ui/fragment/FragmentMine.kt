@@ -171,8 +171,8 @@ class FragmentMine : Fragment() {
             mViewBinding.mineLayoutLogin.gone()
             mViewBinding.mineLayoutInfo.visible()
             mViewBinding.mineAvatar.intoCircle(userhead, R.mipmap.ic_avatar_default)
-            mViewBinding.mineTextNickname.text = nickname.ifEmpty { "用户$id" }
-            mViewBinding.mineTextId.text = getString(R.string.string_user_id, id.toString())
+            mViewBinding.mineTextNickname.text = nickname.ifEmpty { "用户$userId" }
+            mViewBinding.mineTextId.text = getString(R.string.string_user_id, userId)
         } ?: apply {
             mViewBinding.mineAvatar.intoCircle(R.mipmap.ic_avatar_default)
             mViewBinding.mineLayoutInfo.gone()

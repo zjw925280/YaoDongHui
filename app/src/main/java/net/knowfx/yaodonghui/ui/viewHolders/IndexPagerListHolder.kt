@@ -7,6 +7,7 @@ import net.knowfx.yaodonghui.base.BaseListData
 import net.knowfx.yaodonghui.databinding.LayoutItemSuperviseNewsBinding
 import net.knowfx.yaodonghui.entities.IndexPagerData
 import net.knowfx.yaodonghui.ext.getCreateFormatTime
+import net.knowfx.yaodonghui.ext.getTextFromColorModel
 import net.knowfx.yaodonghui.ext.getTextFromModel
 import net.knowfx.yaodonghui.ext.intoCorners
 import net.knowfx.yaodonghui.ext.intoLogoOrCover
@@ -41,6 +42,7 @@ class IndexPagerListHolder(parent: ViewGroup, resId: Int) : BaseViewHolder(paren
             data.createTime.getCreateFormatTime()
         )
         binding.labelTv.text = getTextFromModel(data.model)
+        binding.labelTv.setBackgroundResource(getTextFromColorModel(data.model))
         itemView.setOnclick {
             onItemClicked?.invoke(it, data, position)
         }

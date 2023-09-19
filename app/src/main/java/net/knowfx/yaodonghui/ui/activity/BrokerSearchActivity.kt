@@ -221,7 +221,8 @@ class BrokerSearchActivity : BaseActivity() {
         setMultipleClick(mBinding.btnCancel, mBinding.btnDelete) {
             when (it) {
                 mBinding.btnCancel -> {
-                    if (mKey.isEmpty() || mIsSelect) {
+                    val str = mBinding.searchEdt.text.toString().trim()
+                    if (str.isEmpty() || mIsSelect) {
                         finish()
                     } else {
                         mBinding.searchEdt.setText("")

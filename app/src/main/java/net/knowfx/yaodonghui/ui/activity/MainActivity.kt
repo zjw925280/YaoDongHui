@@ -8,6 +8,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
 import androidx.activity.result.ActivityResultLauncher
@@ -16,12 +17,11 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import cn.jiguang.api.utils.JCollectionAuth
-import cn.jpush.android.api.JPushInterface
+import com.google.gson.Gson
 import net.knowfx.yaodonghui.R
 import net.knowfx.yaodonghui.databinding.ActivityMainBinding
 import net.knowfx.yaodonghui.ui.fragment.FragmentBroker
 import net.knowfx.yaodonghui.ui.fragment.FragmentExplore
-import net.knowfx.yaodonghui.ui.fragment.FragmentIndex
 import net.knowfx.yaodonghui.ui.fragment.FragmentMine
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.entities.JUMP_TYPE_CONTENT
@@ -40,9 +40,7 @@ import net.knowfx.yaodonghui.ext.saveUserData
 import net.knowfx.yaodonghui.ext.toast
 import net.knowfx.yaodonghui.ext.trueLet
 import net.knowfx.yaodonghui.ui.fragment.FragmentNewIndex
-import net.knowfx.yaodonghui.utils.JPushReceiver
 import net.knowfx.yaodonghui.utils.MyApplication
-import net.knowfx.yaodonghui.utils.ToastUtils
 import kotlin.math.max
 
 class MainActivity : BaseActivity(), OnClickListener {
@@ -165,6 +163,7 @@ class MainActivity : BaseActivity(), OnClickListener {
         commonViewModel.value.userInfoResult.observe(this) {
             it?.apply {
                 result(UserInfoData(), success = { data ->
+                    Log.e("数据平台","数据平台="+Gson().toJson(data))
                     data.saveUserData()
                     if (mCurrentFragment is FragmentMine) {
                         (mCurrentFragment as FragmentMine).refreshData()

@@ -14,7 +14,6 @@ import net.knowfx.yaodonghui.adapters.CommonListAdapter
 import net.knowfx.yaodonghui.base.BaseActivity
 import net.knowfx.yaodonghui.databinding.ActivityArticleSearchBinding
 import net.knowfx.yaodonghui.databinding.LayoutItemSearchHistoryBinding
-import net.knowfx.yaodonghui.entities.ArticleListData
 import net.knowfx.yaodonghui.entities.DrawCircleListData
 import net.knowfx.yaodonghui.ext.bindController
 import net.knowfx.yaodonghui.ext.delSingleCache
