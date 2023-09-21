@@ -23,8 +23,7 @@ import retrofit2.http.Query
 
 open class CommonViewModel(app: Application) : AndroidViewModel(app) {
 
-    private val commonService1 = HttpClientManager.getInstance(app,"https://www.knowfx.net").client1.createService( Service::class.java)
-    private val commonService = HttpClientManager.getInstance(app).client.createService(Service::class.java)
+    private val commonService = HttpClientManager.getInstance(app,"https://www.knowfx.net").client.createService(Service::class.java)
     val userInfoResult = SingleSourceLiveData<Any>()
     val logoutResult = SingleSourceLiveData<Any>()
     val delAccountResult = SingleSourceLiveData<Any>()
@@ -88,7 +87,7 @@ open class CommonViewModel(app: Application) : AndroidViewModel(app) {
      * 获取图形验证码
      */
     fun getGraphicCode() {
-        graphicCodeResult.setSource(commonService1.getGraphicCode())
+        graphicCodeResult.setSource(commonService.getGraphicCode())
     }
     fun feedback(theme: String, content: String, phone: String, pics: ArrayList<PicData>) {
         val parts = HashMap<String, List<MultipartBody.Part>>()
@@ -132,14 +131,16 @@ open class CommonViewModel(app: Application) : AndroidViewModel(app) {
      * 请求手机验证码
      */
     fun requestUuidPhoneCode(phone: String,code: String,uuid: String,type: String) {
-        Log.e("主要是这个uuid","主要是这个uuid=="+uuid)
-        phoneUuidCodeResult.setSource(commonService1.requestUuidPhoneCode(phone,code,uuid,type))
+        phoneUuidCodeResult.setSource(commonService.requestUuidPhoneCode(phone,code,uuid,type))
     }
 
     interface Service {
 
         @POST(APIs.URL_GET_PHONE_UUID_CODE)
-        fun requestUuidPhoneCode(@Query("phone") phone: String,@Query("code") code: String,@Query("uuid") uuid: String,@Query("type") type: String): LiveData<Any>
+        fun requestUuidPhoneCode(@Query("phone") phone: String,
+                                 @Query("code") code: String,
+                                 @Query("uuid") uuid: String,
+                                 @Query("type") type: String): LiveData<Any>
 
 
         @GET(APIs.URL_GETCODE)

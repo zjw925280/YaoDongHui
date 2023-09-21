@@ -102,6 +102,7 @@ class RetrofitClient(mContext: Context, baseUrl: String) {
             val mediaType = responseBody.contentType()
             val content = response.body!!.string()
             "==========================================请求打印===========================================".logE()
+            "=请求地址：${request}".logE()
             "=请求地址：${request.url}".logE()
             "=headers: ${request.headers}".logE()
             ("=请求结果:  $content").logE()

@@ -2,6 +2,7 @@ package net.knowfx.yaodonghui.ui.activity
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -37,10 +38,8 @@ class FindPwdActivity : BaseActivity() {
         mViewModel.modifyPwdResult.observe(this) {
             it?.apply {
                 if (isSuccess) {
-                    data?.trueLet {
-                        "修改成功啦".logE()
-                        backOnFinish()
-                    }
+                    ToastUtils.showToast("修改成功啦")
+                    backOnFinish()
                 } else {
                 }
             }

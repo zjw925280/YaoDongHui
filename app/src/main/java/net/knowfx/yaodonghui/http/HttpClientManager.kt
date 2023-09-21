@@ -12,12 +12,12 @@ class HttpClientManager {
 
     private constructor (context: Context) {
         this.context = context
-        client = RetrofitClient(context, BuildConfig.SERVER_PATH + BuildConfig.CODE)
+        client1 = RetrofitClient(context, BuildConfig.SERVER_PATH + BuildConfig.CODE)
     }
 
     private constructor(context: Context, baseUrl: String) {
         this.context = context
-        client1 = RetrofitClient(context, baseUrl)
+        client = RetrofitClient(context, baseUrl)
     }
 
     companion object {
@@ -27,21 +27,21 @@ class HttpClientManager {
 
         lateinit var instance1: HttpClientManager
         fun getInstance(context: Context): HttpClientManager {
-            if (!this::instance.isInitialized) {
-                synchronized(HttpClientManager::class.java) {
-                    instance = HttpClientManager(context)
-                }
-            }
-            return instance
-        }
-
-        fun getInstance(context: Context, baseUrl: String): HttpClientManager {
             if (!this::instance1.isInitialized) {
                 synchronized(HttpClientManager::class.java) {
-                    instance1 = HttpClientManager(context, baseUrl)
+                    instance1 = HttpClientManager(context)
                 }
             }
             return instance1
+        }
+
+        fun getInstance(context: Context, baseUrl: String): HttpClientManager {
+            if (!this::instance.isInitialized) {
+                synchronized(HttpClientManager::class.java) {
+                    instance = HttpClientManager(context, baseUrl)
+                }
+            }
+            return instance
         }
     }
 }

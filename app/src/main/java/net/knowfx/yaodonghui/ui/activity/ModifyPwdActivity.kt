@@ -1,6 +1,7 @@
 package net.knowfx.yaodonghui.ui.activity
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import net.knowfx.yaodonghui.databinding.ActivityModifyPwdBinding
@@ -25,12 +26,14 @@ class ModifyPwdActivity : BaseActivity() {
         mViewModel = ViewModelProvider(this)[LoginRegisterViewModel::class.java]
         mViewModel.modifyPwdResult.observe(this) {
             it?.apply {
+                Log.e("是不是这里","是不是这里");
                 if (isSuccess) {
                     data?.trueLet {
                         "修改密码成功".toast()
                         logout()
                     }
                 } else {
+
                 }
             }
         }

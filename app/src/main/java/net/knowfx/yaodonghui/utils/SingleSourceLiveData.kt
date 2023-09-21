@@ -1,5 +1,6 @@
 package net.knowfx.yaodonghui.utils
 
+import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
@@ -55,7 +56,10 @@ class SingleSourceLiveData<T> : MutableLiveData<T?>() {
             if (mPending.compareAndSet(true, false)) {
                 t?.apply {
                     observer.onChanged(this)
+                    Log.e("是不是这里","apply")
                 }
+            }else{
+                Log.e("是不是这里","compareAndSet")
             }
         }
     }

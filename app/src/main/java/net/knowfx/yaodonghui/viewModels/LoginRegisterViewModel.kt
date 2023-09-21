@@ -4,10 +4,12 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import net.knowfx.yaodonghui.BuildConfig
+import net.knowfx.yaodonghui.entities.ForgetPawd
 import net.knowfx.yaodonghui.http.APIs
 import net.knowfx.yaodonghui.http.HttpClientManager
 import net.knowfx.yaodonghui.utils.SingleSourceLiveData
 import net.knowfx.yaodonghui.entities.Result
+import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -15,7 +17,6 @@ import retrofit2.http.Query
 class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
 
     private val server =  HttpClientManager.instance.client.createService(MyServer::class.java)
-
 
     val registerResult = SingleSourceLiveData<Any>()
 
@@ -37,7 +38,7 @@ class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
      * 忘记密码
      */
     fun modifyPwd(phone: String, code: String, pwd: String) {
-        modifyPwdResult.setSource(server.modifyPwd(phone, code, pwd))
+        modifyPwdResult.setSource(server.modifyPwd(ForgetPawd(phone, code, pwd)))
     }
 
     /**
@@ -62,8 +63,6 @@ class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
     }
     private interface MyServer {
 
-
-
         @POST(APIs.URL_REGISTER)
         fun registerAccount(
             @Query("phone") phone: String,
@@ -74,9 +73,7 @@ class LoginRegisterViewModel(app: Application) : CommonViewModel(app) {
 
         @POST(APIs.URL_FORGET_PWD)
         fun modifyPwd(
-            @Query("phone") phone: String,
-            @Query("code") code: String,
-            @Query("newPassword") pwd: String
+            @Body request: ForgetPawd
         ): LiveData<Result<Boolean>>
 
         @POST(APIs.URL_LOGIN_PWD)
